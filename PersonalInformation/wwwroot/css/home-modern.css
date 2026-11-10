@@ -1054,3 +1054,9 @@
         transform: none;
     }
 }
+/* no animation until the interactive page has attached, so nothing restarts */
+.hx-root:not(.hx-live) *,
+.hx-root:not(.hx-live) *::before,
+.hx-root:not(.hx-live) *::after {
+    animation: none !important;
+}

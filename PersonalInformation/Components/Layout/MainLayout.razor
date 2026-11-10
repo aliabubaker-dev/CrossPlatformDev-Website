@@ -6,11 +6,11 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="app-shell @(ThemeService.IsDark ? "dark-theme" : "light-theme")" id="app-root">
+<div class="app-shell" id="app-root">
     <NavMenu />
 
     <div class="content-area">
-        <main id="main" class="page-enter" tabindex="-1">
+        <main id="main" tabindex="-1">
             @Body
         </main>
         <Footer />

@@ -19,7 +19,7 @@
         window.disposeHomePage();
         const root = document.querySelector('.hx-root');
         if (!root) return;
-
+        requestAnimationFrame(() => root.classList.add('hx-live'));
         const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
         const fold = window.innerHeight * 0.92;
