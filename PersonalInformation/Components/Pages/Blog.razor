@@ -782,7 +782,7 @@
         if (firstRender)
         {
             // Load the JS file as a module
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Blog.razor.js");
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/Blog.js");
             
             // Call the function
             await module.InvokeVoidAsync("blogPageInit");

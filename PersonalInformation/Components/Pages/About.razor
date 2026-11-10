@@ -384,7 +384,7 @@
         if (firstRender)
         {
             // This tells Blazor to load the JavaScript file into the browser
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/About.razor.js");
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/About.js");
             
             // Now we can safely call the function
             await module.InvokeVoidAsync("aboutPageInit");

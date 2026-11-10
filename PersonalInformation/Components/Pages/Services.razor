@@ -252,7 +252,7 @@
         if (firstRender)
         {
             // Load the JS module
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Services.razor.js");
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/Services.js");
             
             // Run the initialization
             await module.InvokeVoidAsync("initServicesPage");

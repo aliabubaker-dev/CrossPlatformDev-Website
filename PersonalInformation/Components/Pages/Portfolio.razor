@@ -239,13 +239,13 @@
 </div>
 
 
-                @code {
+@code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            // Load the JS module for the portfolio page
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Portfolio.razor.js");
+            // Load the JS module from the wwwroot/js folder
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/portfolio.js");
             
             // Run the initialization
             await module.InvokeVoidAsync("portfolioPageInit");

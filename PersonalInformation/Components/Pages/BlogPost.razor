@@ -349,7 +349,7 @@
         if (post is not null && firstRender)
         {
             // 1. Load the JS module for this specific page
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/BlogPost.razor.js");
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/BlogPost.js");
             
             // 2. Initialize the reading bar and animations
             await module.InvokeVoidAsync("blogPostInit");
