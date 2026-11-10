@@ -6,7 +6,8 @@ using WebOptimizer;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents()
+    .AddInteractiveWebAssemblyComponents(); // Add this
 
 // Add WebOptimizer for bundling and minification
 builder.Services.AddWebOptimizer(pipeline =>
