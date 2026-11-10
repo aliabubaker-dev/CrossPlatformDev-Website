@@ -135,7 +135,7 @@
         const lines = [
             // Comments - bright green
             { text: '// ════════════════════════════════════════', cls: 'code-comment' },
-            { text: '//  👨‍💻 Full-Stack Developer · 5+ years', cls: 'code-comment' },
+            { text: '//  👨‍💻 Full-Stack Developer · 2+ years', cls: 'code-comment' },
             { text: '//  🚀 Building production software since 2019', cls: 'code-comment' },
             { text: '// ════════════════════════════════════════', cls: 'code-comment' },
             { text: '', cls: '' },
