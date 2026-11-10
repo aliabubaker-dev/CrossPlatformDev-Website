@@ -221,8 +221,7 @@
     
 
     function initAll() {
-        // Always re-initialize mobile menu on each navigation
-        initMobileMenu();
+        
         initScrollReveal();
         initCodeTyping();
     }

@@ -97,3 +97,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     background: var(--accent-cyan);
     color: var(--bg-void);
 }
+/* Blazor moves focus to the h1 after navigation. Keep the focus, hide the ring. */
+h1:focus, h1:focus-visible,
+main:focus, main:focus-visible {
+    outline: none;
+}
