@@ -134,12 +134,42 @@
         </div>
     </section>
 
-    <!-- STATS -->
+    <!-- PROOF -->
     <section class="hx-sec hx-tight" aria-label="Experience at a glance">
-        <div class="container hx-stats">
-            <div data-reveal style="--i:0"><strong><span data-count="5">5</span>+</strong><span>years building production software</span></div>
-            <div data-reveal style="--i:1"><strong><span data-count="300">300</span>+</strong><span>support cases handled after launch</span></div>
-            <div data-reveal style="--i:2"><strong>3</strong><span>platforms: web, mobile and business systems</span></div>
+        <div class="container">
+            <div class="hx-proof" data-reveal>
+                <div class="hx-proof-cell">
+                    <strong><b data-count="5">5</b>+</strong>
+                    <p>years building production software</p>
+                    <div class="hx-yrs" aria-hidden="true">
+                        @for (var i = 0; i < 5; i++)
+                        {
+                            <i style="--t:@i"></i>
+                        }
+                    </div>
+                </div>
+
+                <div class="hx-proof-cell">
+                    <strong><b data-count="300">300</b>+</strong>
+                    <p>support cases handled after launch</p>
+                    <div class="hx-dots" aria-hidden="true">
+                        @for (var i = 0; i < 30; i++)
+                        {
+                            <i style="--t:@((i % 15) + (i / 15))"></i>
+                        }
+                    </div>
+                </div>
+
+                <div class="hx-proof-cell">
+                    <strong>3</strong>
+                    <p>platforms, one team behind all of them</p>
+                    <ul class="hx-plat">
+                        <li>Web</li>
+                        <li>Mobile</li>
+                        <li>Business systems</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -180,9 +210,19 @@
     <section class="hx-sec hx-tight" aria-labelledby="hx-cta-title">
         <div class="container">
             <div class="hx-cta" data-reveal>
-                <h2 id="hx-cta-title">Let's turn your idea into working software.</h2>
-                <p>Describe your idea and get a clear scope, timeline and next steps.</p>
-                <a href="/contact" class="hx-btn hx-btn-dark">Start a project <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                <div class="hx-cta-main">
+                    <h2 id="hx-cta-title">Let's turn your idea into working software.</h2>
+                    <p>Describe your idea and get a clear scope, timeline and next steps.</p>
+                    <div class="hx-actions">
+                        <a href="/contact" class="hx-btn hx-btn-primary">Start a project <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                        <a href="mailto:aliabdulsameea69@gmail.com" class="hx-btn hx-btn-ghost">Email us instead</a>
+                    </div>
+                </div>
+                <ol class="hx-next">
+                    <li><b>Tell us what you need</b><span>A few lines about your idea is enough to begin.</span></li>
+                    <li><b>Get a clear plan</b><span>Scope, timeline and next steps, agreed before any code is written.</span></li>
+                    <li><b>We build and support it</b><span>Regular progress you can see, then launch and ongoing support.</span></li>
+                </ol>
             </div>
         </div>
     </section>
