@@ -5,9 +5,9 @@ using WebOptimizer;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Keep this exactly like this. Remove the WebAssembly line.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents(); // Add this
+    .AddInteractiveServerComponents();
 
 // Add WebOptimizer for bundling and minification
 builder.Services.AddWebOptimizer(pipeline =>
@@ -51,7 +51,6 @@ var forwardedHeaderOptions = new ForwardedHeadersOptions
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto,
     ForwardLimit = null
 };
-// Fixed: Use KnownIPNetworks instead of KnownNetworks (obsolete)
 forwardedHeaderOptions.KnownIPNetworks.Clear();
 forwardedHeaderOptions.KnownProxies.Clear();
 app.UseForwardedHeaders(forwardedHeaderOptions);
