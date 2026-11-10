@@ -1,393 +1,280 @@
 ﻿@page "/about"
+@using System.Text.Json
+@implements IAsyncDisposable
 @inject IJSRuntime JS
+@inject NavigationManager Nav
 
-<SeoHead Title="Hire a .NET Full-Stack Developer | Ali Abubaker" 
-         Description="Looking to hire a cross platform developer? Ali Abubaker is a senior full-stack .NET developer in Hamilton, ON with 5+ years of experience in C#, Blazor, Azure, and mobile app development." 
+<SeoHead Title="Hire a .NET Full-Stack Developer | Ali Abubaker"
+         Description="Looking to hire a cross platform developer? Ali Abubaker is a full-stack .NET developer in Hamilton, ON with 5+ years in software and IT: C#, Blazor, Azure and mobile apps."
          Path="/about" />
 
-<div class="page-enter">
+<HeadContent>
+    <script type="application/ld+json">@((MarkupString)_jsonLd)</script>
+</HeadContent>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="about-hero section">
-        <div class="container">
-            <div class="about-hero-grid">
-                <div class="about-hero-content">
-                    <div class="hero-badge reveal" style="--stagger-index:0">
-                        <span class="badge-dot"></span>
-                        <span>About me</span>
-                    </div>
-                   <h1 class="about-headline reveal" style="--stagger-index:1">
-    <span class="about-line">Hi, I'm Ali Abubaker.</span>
-    <span class="about-line about-line-gradient">Full-Stack .NET & Cross Platform Developer.</span>
-</h1>
-                    <p class="about-description reveal" style="--stagger-index:2">
-                        Senior software developer with 5+ years of experience in full-stack development, IT infrastructure,
-                        and operations. I've built and maintained production .NET and Node.js applications, with a strong
-                        foundation in cybersecurity and cloud architecture.
-                    </p>
-                    <div class="about-actions reveal" style="--stagger-index:3">
-                        <a href="/contact" class="btn btn-primary btn-large btn-white-text">
-                            <span>Get in Touch</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                        </a>
-                        <a href="/portfolio" class="btn btn-ghost btn-large">View My Work</a>
-                    </div>
+<div class="ab-root">
+
+    <!-- ===== HERO ===== -->
+    <section class="ab-hero" aria-labelledby="ab-h1">
+        <div class="container ab-hero-grid">
+            <div class="ab-hero-copy">
+                <p class="ab-status"><i class="ab-pulse"></i><b>Available for projects</b></p>
+                <h1 id="ab-h1" class="ab-h1">Ali Abubaker, full-stack .NET &amp; cross platform developer</h1>
+                <p class="ab-lead">
+                    Software developer with 5+ years across full-stack development, IT infrastructure and operations.
+                    I build and maintain production .NET and Node.js applications, with a strong foundation in
+                    cybersecurity and cloud architecture.
+                </p>
+                <div class="ab-actions">
+                    <a href="/contact" class="ab-btn ab-btn-primary">Get in touch <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                    <a href="/portfolio" class="ab-btn ab-btn-ghost">View my work</a>
                 </div>
-                <div class="about-hero-visual reveal" style="--stagger-index:2">
-                    <div class="about-orb"></div>
-                    <div class="about-avatar">
-                        <div class="avatar-ring">
-                            <div class="avatar-inner">
-                                <span class="avatar-emoji">👨‍💻</span>
-                            </div>
-                        </div>
-                        <div class="avatar-status">
-                            <span class="status-dot"></span>
-                            <span class="status-text">Available for projects</span>
+                <ul class="ab-facts">
+                    <li><small>Based in</small><b>Hamilton, ON, Canada</b></li>
+                    <li><small>Works</small><b>Worldwide</b></li>
+                    <li><small>Languages</small><b>English, Kurdish, Arabic</b></li>
+                </ul>
+            </div>
+
+            <div class="ab-photo">
+                <div class="ab-tilt">
+                    <div class="ab-ring">
+                        <div class="ab-frame">
+                            <img src="img/ali%20abubaker.jpeg" alt="Ali Abubaker, full-stack .NET developer in Hamilton, Ontario"
+                                 width="840" height="1050" fetchpriority="high" decoding="async" />
+                            <i class="ab-glare" aria-hidden="true"></i>
+                            <i class="ab-shine" aria-hidden="true"></i>
                         </div>
                     </div>
+                    <div class="ab-badge b1" aria-hidden="true"><i></i><b>.NET Developer</b><small>Gerrie Electric</small></div>
+                    <div class="ab-badge b2" aria-hidden="true"><i></i><b>Azure certified</b><small>Microsoft</small></div>
+                    <div class="ab-badge b3" aria-hidden="true"><i></i><b>300+ cases</b><small>support resolved</small></div>
                 </div>
+                <div class="ab-floor" aria-hidden="true"></div>
             </div>
         </div>
     </section>
 
     <!-- ===== BIO + STATS ===== -->
-    <section class="bio-section section-tight">
-        <div class="container">
-            <div class="bio-grid">
-                <div class="bio-content reveal" style="--stagger-index:0">
-                    <span class="eyebrow">who-i-am</span>
-                    <h2>From Hamilton,<br><span class="grad-text">building global solutions.</span></h2>
-                    <p>
-                        Currently a <strong>.NET Software Developer</strong> at Gerrie Electric in Burlington, ON,
-                        and previously an IT Help Desk Technician resolving 300+ support requests. I hold an
-                        <strong>Advanced Diploma in Software Development</strong> from Mohawk College and a
-                        <strong>Microsoft Azure certification</strong>.
-                    </p>
-                  <p>
-    I specialize in providing high-quality cross platform development services. Whether you need a custom business website, a mobile application, or a complete system management tool (like a POS system for supermarkets), I have the skills to build it. My experience spans full-stack development, cloud architecture, and IT operations — all with a focus on building software that actually ships.
-</p>
-                    <div class="bio-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📍</span>
-                            <span>Hamilton, ON, Canada</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🌍</span>
-                            <span>Available worldwide</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🗣️</span>
-                            <span>English, Kurdish, Arabic</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bio-stats reveal" style="--stagger-index:1">
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="stat-number" data-count="5">0</span>
-                            <span class="stat-label">Years Experience</span>
-                            <div class="stat-bar"><div class="stat-bar-fill" style="width: 100%;"></div></div>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number" data-count="300">0</span>
-                            <span class="stat-label">Support Cases Resolved</span>
-                            <div class="stat-bar"><div class="stat-bar-fill" style="width: 100%;"></div></div>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number" data-count="100">0</span>
-                            <span class="stat-label">% Test Coverage</span>
-                            <div class="stat-bar"><div class="stat-bar-fill" style="width: 100%;"></div></div>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-number" data-count="12">0</span>
-                            <span class="stat-label">Projects Delivered</span>
-                            <div class="stat-bar"><div class="stat-bar-fill" style="width: 90%;"></div></div>
-                        </div>
-                    </div>
-                </div>
+    <section class="ab-sec" aria-labelledby="ab-bio-title">
+        <div class="container ab-bio-grid">
+            <div class="ab-bio" data-reveal>
+                <h2 id="ab-bio-title" class="ab-h2">From Hamilton, building global solutions</h2>
+                <p>
+                    I'm a <strong>.NET Software Developer</strong> at Gerrie Electric in Burlington, ON, and previously an IT Help Desk
+                    Technician who resolved 300+ support requests. I hold an <strong>Advanced Diploma in Software Development</strong>
+                    from Mohawk College and a <strong>Microsoft Azure certification</strong>.
+                </p>
+                <p>
+                    I provide high-quality cross platform development services. Whether you need a custom business website, a mobile
+                    application, or a complete system management tool like a POS system for supermarkets, I can build it. My experience
+                    spans full-stack development, cloud architecture and IT operations, all with a focus on software that actually ships.
+                </p>
+            </div>
+
+            <div class="ab-stats" data-reveal style="--i:1">
+                <div class="ab-stat"><strong><b data-count="5">5</b>+</strong><small>years of experience</small></div>
+                <div class="ab-stat"><strong><b data-count="300">300</b>+</strong><small>support cases resolved</small></div>
+                <div class="ab-stat"><strong><b data-count="12">12</b></strong><small>projects delivered</small></div>
+                <div class="ab-stat"><strong><b data-count="100">100</b>%</strong><small>test coverage target</small></div>
             </div>
         </div>
     </section>
 
     <!-- ===== SKILLS ===== -->
-    <section class="skills-section section-tight">
+    <section class="ab-sec ab-band" aria-labelledby="ab-skills-title">
         <div class="container">
-            <div class="section-header reveal text-center">
-                <span class="eyebrow" style="justify-content: center;">tech-stack</span>
-                <h2>What I work with<br><span class="grad-text">every single day.</span></h2>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category reveal" style="--stagger-index:0">
-                    <div class="skill-category-header">
-                        <span class="skill-category-icon">⚡</span>
-                        <h4>Languages</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">C#</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript / TypeScript</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Java</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SQL</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal" style="--stagger-index:1">
-                    <div class="skill-category-header">
-                        <span class="skill-category-icon">🛠️</span>
-                        <h4>Frameworks & Libraries</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">.NET Core / ASP.NET</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Node.js / Express</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">React</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Bootstrap</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal" style="--stagger-index:2">
-                    <div class="skill-category-header">
-                        <span class="skill-category-icon">☁️</span>
-                        <h4>Cloud & Databases</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Azure</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">SQL Server</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">MySQL</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">MongoDB</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-                            <span class="skill-percent">75%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skill-category reveal" style="--stagger-index:3">
-                    <div class="skill-category-header">
-                        <span class="skill-category-icon">🔧</span>
-                        <h4>Tools & Methodologies</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Git / Azure DevOps</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Agile / Scrum</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">TDD (Jest / Cypress)</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">RESTful APIs</span>
-                            <div class="skill-bar"><div class="skill-bar-fill" style="width: 95%;"></div></div>
-                            <span class="skill-percent">95%</span>
-                        </div>
-                    </div>
-                </div>
+            <header class="ab-head" data-reveal>
+                <h2 id="ab-skills-title" class="ab-h2">What I work with every day</h2>
+            </header>
+            <div class="ab-skills">
+                @foreach (var (title, icon, items) in _skills)
+                {
+                    <article class="ab-skill" data-reveal style="--i:@(_skills.ToList().FindIndex(s => s.Title == title))">
+                        <h3><i aria-hidden="true">@icon</i>@title</h3>
+                        <ul>
+                            @foreach (var s in items)
+                            {
+                                <li>@s</li>
+                            }
+                        </ul>
+                    </article>
+                }
             </div>
         </div>
     </section>
 
-    <!-- ===== EXPERIENCE TIMELINE ===== -->
-    <section class="timeline-section section-tight">
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="ab-sec" aria-labelledby="ab-exp-title">
         <div class="container">
-            <div class="section-header reveal text-center">
-                <span class="eyebrow" style="justify-content: center;">experience</span>
-                <h2>My professional<br><span class="grad-text">journey so far.</span></h2>
-            </div>
+            <header class="ab-head" data-reveal>
+                <h2 id="ab-exp-title" class="ab-h2">My professional journey so far</h2>
+            </header>
 
-            <div class="timeline">
-                <div class="timeline-item reveal" style="--stagger-index:0">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <span class="timeline-date">Sep 2024 – Present</span>
-                            <span class="timeline-badge">Current</span>
-                        </div>
-                        <h4>.NET Software Developer</h4>
-                        <p class="timeline-company">Gerrie Electric — Burlington, ON</p>
-                        <ul class="timeline-details">
-                            <li>Spearheaded design and development of high-performance .NET applications and RESTful APIs</li>
-                            <li>Collaborated with cross-functional teams to gather complex requirements</li>
-                            <li>Engineered front-end components using TypeScript and JavaScript</li>
-                            <li>Implemented secure coding practices and conducted code reviews</li>
+            <ol class="ab-tl">
+                <li>
+                    <article class="ab-card">
+                        <div class="ab-card-top"><small>Sep 2024 to present</small><em>Current</em></div>
+                        <h3>.NET Software Developer</h3>
+                        <p class="ab-org">Gerrie Electric, Burlington, ON</p>
+                        <ul>
+                            <li>Led design and development of high-performance .NET applications and RESTful APIs</li>
+                            <li>Worked with cross-functional teams to gather complex requirements</li>
+                            <li>Built front-end components with TypeScript and JavaScript</li>
+                            <li>Applied secure coding practices and ran code reviews</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal" style="--stagger-index:1">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <span class="timeline-date">Jul 2022 – Sep 2024</span>
-                        </div>
-                        <h4>IT Help Desk Technician</h4>
-                        <p class="timeline-company">Gerrie Electric — Burlington, ON</p>
-                        <ul class="timeline-details">
-                            <li>Managed and resolved over 300 hardware, software, and network support requests</li>
+                    </article>
+                </li>
+                <li>
+                    <article class="ab-card">
+                        <div class="ab-card-top"><small>Jul 2022 to Sep 2024</small></div>
+                        <h3>IT Help Desk Technician</h3>
+                        <p class="ab-org">Gerrie Electric, Burlington, ON</p>
+                        <ul>
+                            <li>Managed and resolved over 300 hardware, software and network support requests</li>
                             <li>Diagnosed and repaired complex issues with Surface devices</li>
                             <li>Streamlined network printer installations across the organization</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal" style="--stagger-index:2">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <span class="timeline-date">May 2019 – Jul 2022</span>
-                        </div>
-                        <h4>Cargo Operator</h4>
-                        <p class="timeline-company">Hamilton Airport — Hamilton, ON</p>
-                        <ul class="timeline-details">
+                    </article>
+                </li>
+                <li>
+                    <article class="ab-card">
+                        <div class="ab-card-top"><small>May 2019 to Jul 2022</small></div>
+                        <h3>Cargo Operator</h3>
+                        <p class="ab-org">Hamilton Airport, Hamilton, ON</p>
+                        <ul>
                             <li>Operated heavy-duty tug vehicles for safe and timely cargo transport</li>
-                            <li>Executed precise loading and unloading procedures</li>
-                            <li>Collaborated with 100+ team members to optimize logistics</li>
+                            <li>Carried out precise loading and unloading procedures</li>
+                            <li>Worked with 100+ team members to improve logistics</li>
                         </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item reveal" style="--stagger-index:3">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <span class="timeline-date">Dec 2025</span>
-                            <span class="timeline-badge">Graduating</span>
-                        </div>
-                        <h4>Advanced Diploma in Software Development</h4>
-                        <p class="timeline-company">Mohawk College — Hamilton, ON</p>
-                        <ul class="timeline-details">
-                            <li>.NET Programming, Data Structures & Algorithms</li>
-                            <li>Mobile Web Development, Secure Software Development</li>
-                            <li>Cybersecurity Assessment & Testing, Object-Oriented Systems</li>
+                    </article>
+                </li>
+                <li>
+                    <article class="ab-card">
+                        <div class="ab-card-top"><small>Dec 2025</small><em>Graduating</em></div>
+                        <h3>Advanced Diploma in Software Development</h3>
+                        <p class="ab-org">Mohawk College, Hamilton, ON</p>
+                        <ul>
+                            <li>.NET programming, data structures and algorithms</li>
+                            <li>Mobile web development and secure software development</li>
+                            <li>Cybersecurity assessment and testing, object-oriented systems</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
+                    </article>
+                </li>
+            </ol>
         </div>
     </section>
 
     <!-- ===== CERTIFICATIONS ===== -->
-    <section class="certs-section section-tight">
-        <div class="container">
-            <div class="certs-grid">
-                <div class="certs-content reveal" style="--stagger-index:0">
-                    <span class="eyebrow">certifications</span>
-                    <h2>Always learning,<br><span class="grad-text">always growing.</span></h2>
-                    <p>I believe in continuous improvement. Here are some of the certifications I've earned along the way.</p>
-                </div>
-                <div class="certs-list reveal" style="--stagger-index:1">
-                    <div class="cert-item">
-                        <span class="cert-icon">☁️</span>
-                        <div>
-                            <span class="cert-name">Microsoft Azure Certification</span>
-                            <span class="cert-year">2024</span>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <span class="cert-icon">🛡️</span>
-                        <div>
-                            <span class="cert-name">Worker Health & Safety Awareness</span>
-                            <span class="cert-year">2024</span>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <span class="cert-icon">📚</span>
-                        <div>
-                            <span class="cert-name">EAP Certified</span>
-                            <span class="cert-year">2024</span>
-                        </div>
-                    </div>
-                    <div class="cert-item">
-                        <span class="cert-icon">🌍</span>
-                        <div>
-                            <span class="cert-name">English Fluency</span>
-                            <span class="cert-year">Native</span>
-                        </div>
-                    </div>
-                </div>
+    <section class="ab-sec ab-band" aria-labelledby="ab-cert-title">
+        <div class="container ab-cert-grid">
+            <div data-reveal>
+                <h2 id="ab-cert-title" class="ab-h2">Always learning, always growing</h2>
+                <p class="ab-sub">I believe in continuous improvement. These are some of the certifications I've earned along the way.</p>
             </div>
+            <ul class="ab-certs">
+                <li data-reveal style="--i:0"><i aria-hidden="true">☁️</i><div><b>Microsoft Azure Certification</b><small>2024</small></div></li>
+                <li data-reveal style="--i:1"><i aria-hidden="true">🛡️</i><div><b>Worker Health &amp; Safety Awareness</b><small>2024</small></div></li>
+                <li data-reveal style="--i:2"><i aria-hidden="true">📚</i><div><b>EAP Certified</b><small>2024</small></div></li>
+                <li data-reveal style="--i:3"><i aria-hidden="true">🌍</i><div><b>English Fluency</b><small>Native</small></div></li>
+            </ul>
         </div>
     </section>
 
     <!-- ===== CTA ===== -->
-    <section class="section-tight">
+    <section class="ab-sec" aria-labelledby="ab-cta-title">
         <div class="container">
-            <div class="reveal cta-banner">
-                <span class="eyebrow" style="justify-content: center;">let's-talk</span>
-                <h2 style="font-size: 2rem;">Want to work together?</h2>
-                <p style="max-width: 500px; margin: 0 auto var(--space-5);">I'm always open to new projects, collaborations, and interesting challenges.</p>
-                <a href="/contact" class="btn btn-primary">Get in Touch</a>
+            <div class="ab-cta" data-reveal>
+                <h2 id="ab-cta-title">Want to work together?</h2>
+                <p>I'm open to new projects, collaborations and interesting challenges.</p>
+                <a href="/contact" class="ab-btn ab-btn-primary">Get in touch <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
             </div>
         </div>
     </section>
-
 </div>
+
 @code {
+    private string _jsonLd = "";
+    private IJSObjectReference? _module;
+
+    private static readonly (string Title, string Icon, string[] Items)[] _skills =
+    {
+        ("Languages", "⚡", new[] { "C#", "JavaScript", "TypeScript", "Python", "Java", "SQL" }),
+        ("Frameworks & libraries", "🛠️", new[] { ".NET Core", "ASP.NET", "Blazor", "Node.js", "Express", "React", "Bootstrap" }),
+        ("Cloud & databases", "☁️", new[] { "Azure", "SQL Server", "MySQL", "MongoDB" }),
+        ("Tools & methods", "🔧", new[] { "Git", "Azure DevOps", "Agile / Scrum", "TDD (Jest, Cypress)", "RESTful APIs" })
+    };
+
+    protected override void OnInitialized()
+    {
+        var b = Nav.BaseUri.TrimEnd('/');
+        var person = new Dictionary<string, object>
+        {
+            ["@type"] = "Person",
+            ["@id"] = b + "/about#person",
+            ["name"] = "Ali Abubaker",
+            ["jobTitle"] = ".NET Software Developer",
+            ["url"] = b + "/about",
+            ["image"] = b + "/img/ali%20abubaker.jpeg",
+            ["address"] = new Dictionary<string, object>
+            {
+                ["@type"] = "PostalAddress",
+                ["addressLocality"] = "Hamilton",
+                ["addressRegion"] = "ON",
+                ["addressCountry"] = "CA"
+            },
+            ["worksFor"] = new Dictionary<string, object> { ["@type"] = "Organization", ["name"] = "Gerrie Electric" },
+            ["alumniOf"] = new Dictionary<string, object> { ["@type"] = "CollegeOrUniversity", ["name"] = "Mohawk College" },
+            ["knowsLanguage"] = new[] { "English", "Kurdish", "Arabic" },
+            ["knowsAbout"] = new[] { "C#", ".NET", "ASP.NET", "Blazor", "Azure", "Node.js", "React", "Mobile app development", "Cybersecurity" },
+            ["sameAs"] = new[]
+            {
+                "https://github.com/ali-abdulsameea-abubaker",
+                "https://www.linkedin.com/in/ali-abubaker-a840081a0/",
+                "https://x.com/AliAbubakerDev",
+                "https://www.youtube.com/@aliabdulsameea7569"
+            }
+        };
+
+        var graph = new object[]
+        {
+            new Dictionary<string, object>
+            {
+                ["@type"] = "ProfilePage",
+                ["@id"] = b + "/about#webpage",
+                ["url"] = b + "/about",
+                ["name"] = "About Ali Abubaker | CrossPlatformDev",
+                ["inLanguage"] = "en",
+                ["mainEntity"] = new Dictionary<string, object> { ["@id"] = b + "/about#person" }
+            },
+            person
+        };
+
+        _jsonLd = JsonSerializer.Serialize(new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@graph"] = graph
+        }).Replace("<", "\\u003c");
+    }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
+        if (!firstRender) return;
+        _module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/About.js");
+        await _module.InvokeVoidAsync("aboutPageInit");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        try
         {
-            // This tells Blazor to load the JavaScript file into the browser
-            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/About.js");
-            
-            // Now we can safely call the function
-            await module.InvokeVoidAsync("aboutPageInit");
+            if (_module is not null)
+            {
+                await _module.InvokeVoidAsync("aboutPageDispose");
+                await _module.DisposeAsync();
+            }
         }
+        catch (JSDisconnectedException) { }
+        catch (InvalidOperationException) { }
     }
 }
