@@ -1,5 +1,10 @@
 ﻿@page "/portfolio/internal-tools"
 @page "/internal-tools"
+@inject IJSRuntime JS
+
+<SeoHead Title="Custom Business Systems for Barza Security | DMS, Operations & HR"
+         Description="See the real custom .NET business systems I built for Barza Security Company, including a Document Management System (DMS), Operations Room for contracts, and a Notification System for HR and Admin."
+         Path="/portfolio/internal-tools" />
 
 <div class="page-enter">
 
@@ -17,44 +22,28 @@
                         <span class="tools-line tools-line-gradient">run real businesses.</span>
                     </h1>
                     <p class="tools-description reveal" style="--stagger-index:2">
-                        Custom business management systems built for security companies and supermarkets using .NET Framework and C#.
-                        From employee onboarding to POS with QR scanning — I build software that powers daily operations.
+                        Custom business management systems built for Barza Security Company using .NET Framework and C#.
+                        From managing official documents to tracking operations and HR notifications — I build software that powers daily operations.
                     </p>
-                    <div class="tools-stats reveal" style="--stagger-index:3">
-                        <div class="tools-stat">
-                            <span class="tools-stat-number">4+</span>
-                            <span class="tools-stat-label">Systems Built</span>
-                        </div>
-                        <div class="tools-stat-divider"></div>
-                        <div class="tools-stat">
-                            <span class="tools-stat-number">300+</span>
-                            <span class="tools-stat-label">Users Supported</span>
-                        </div>
-                        <div class="tools-stat-divider"></div>
-                        <div class="tools-stat">
-                            <span class="tools-stat-number">2024</span>
-                            <span class="tools-stat-label">In Production</span>
-                        </div>
-                    </div>
                 </div>
                 <div class="tools-hero-visual reveal" style="--stagger-index:2">
                     <div class="tools-orb"></div>
                     <div class="tools-icon-grid">
                         <div class="tools-icon-card floaty" style="animation-delay: 0s;">
-                            <span class="tools-icon">👔</span>
-                            <span class="tools-icon-label">HR</span>
+                            <span class="tools-icon">🗂️</span>
+                            <span class="tools-icon-label">DMS</span>
                         </div>
                         <div class="tools-icon-card floaty" style="animation-delay: 0.8s;">
                             <span class="tools-icon">📋</span>
                             <span class="tools-icon-label">Ops</span>
                         </div>
                         <div class="tools-icon-card floaty" style="animation-delay: 1.6s;">
-                            <span class="tools-icon">🛒</span>
-                            <span class="tools-icon-label">POS</span>
+                            <span class="tools-icon">🔔</span>
+                            <span class="tools-icon-label">Notify</span>
                         </div>
                         <div class="tools-icon-card floaty" style="animation-delay: 0.4s;">
-                            <span class="tools-icon">🔗</span>
-                            <span class="tools-icon-label">Data</span>
+                            <span class="tools-icon">👔</span>
+                            <span class="tools-icon-label">HR</span>
                         </div>
                     </div>
                 </div>
@@ -67,79 +56,61 @@
         <div class="container">
             <div class="section-header reveal text-center">
                 <span class="eyebrow" style="justify-content: center;">the-systems</span>
-                <h2>Every system I've built<br><span class="grad-text">for real operations.</span></h2>
+                <h2>Every system I've built<br><span class="grad-text">for Barza Security.</span></h2>
             </div>
 
             <div class="systems-grid">
-                <!-- System 1: HR & Administration -->
+                <!-- System 1: DMS -->
                 <div class="system-card reveal" style="--stagger-index:0">
+                    <div class="system-card-image-wrapper">
+                        <img src="img/dms-system.jpg" alt="DMS System Screenshot" class="system-card-image" />
+                    </div>
                     <div class="system-card-header">
-                        <div class="system-card-icon">👔</div>
+                        <div class="system-card-icon">🗂️</div>
                         <div class="system-card-info">
-                            <h3>HR & Administration System</h3>
-                            <span class="system-card-category">.NET Framework · C#</span>
+                            <h3>Document Management System (DMS)</h3>
+                            <span class="system-card-category">.NET Framework · C# · SQL Server</span>
                         </div>
                         <div class="system-card-number">01</div>
                     </div>
                     <p class="system-card-description">
-                        A complete HR and administration system for security companies. Manages employee onboarding, contracts, uniforms, and equipment with role-based access control.
+                        A complete system for managing incoming and outgoing documents (صادرة - واردة) for Barza Security. Tracks letter numbers, dates, senders, and responses.
                     </p>
                     <div class="system-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Employee onboarding & management</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Contract creation & tracking</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Uniform & equipment management</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Role-based access control</span>
-                        </div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Track incoming & outgoing letters</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Attach scanned PDF documents</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Search by place, number, year</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Print formatted reports</span></div>
                     </div>
                     <div class="system-card-tech">
                         <span class="tech-pill">C#</span>
-                        <span class="tech-pill">.NET Framework</span>
-                        <span class="tech-pill">SQL Server</span>
                         <span class="tech-pill">WinForms</span>
+                        <span class="tech-pill">SQL Server</span>
+                        <span class="tech-pill">Printing</span>
                     </div>
                 </div>
 
                 <!-- System 2: Operations Room -->
                 <div class="system-card reveal" style="--stagger-index:1">
+                    <div class="system-card-image-wrapper">
+                        <img src="img/operations-system.jpg" alt="Operations Room System Screenshot" class="system-card-image" />
+                    </div>
                     <div class="system-card-header">
                         <div class="system-card-icon">📋</div>
                         <div class="system-card-info">
                             <h3>Operations Room System</h3>
-                            <span class="system-card-category">.NET Framework · C#</span>
+                            <span class="system-card-category">.NET Framework · C# · SQL Server</span>
                         </div>
                         <div class="system-card-number">02</div>
                     </div>
                     <p class="system-card-description">
-                        A powerful operations room system for managing client projects and contracts. Create, edit, delete, and archive contracts with real-time tracking.
+                        A powerful system for Barza Security to manage client projects and security contracts. Create, edit, delete, and archive contracts with real-time tracking of guards, weapons, and vehicles.
                     </p>
                     <div class="system-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Create new projects for clients</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Edit & update contract details</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Delete & archive contracts</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Real-time project tracking</span>
-                        </div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Create client projects</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Manage staff & salaries</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Track weapons & vehicles</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Print A4 formatted reports</span></div>
                     </div>
                     <div class="system-card-tech">
                         <span class="tech-pill">C#</span>
@@ -149,111 +120,62 @@
                     </div>
                 </div>
 
-                <!-- System 3: Supermarket POS -->
+                <!-- System 3: Notification System -->
                 <div class="system-card reveal" style="--stagger-index:2">
+                    <div class="system-card-image-wrapper">
+                        <img src="img/notification-system.jpg" alt="Notification System Screenshot" class="system-card-image" />
+                    </div>
                     <div class="system-card-header">
-                        <div class="system-card-icon">🛒</div>
+                        <div class="system-card-icon">🔔</div>
                         <div class="system-card-info">
-                            <h3>Supermarket POS System</h3>
-                            <span class="system-card-category">.NET Framework · C#</span>
+                            <h3>Notification System</h3>
+                            <span class="system-card-category">.NET Framework · C# · SQL Server</span>
                         </div>
                         <div class="system-card-number">03</div>
                     </div>
                     <p class="system-card-description">
-                        A complete point-of-sale system for supermarkets with QR code scanning, automatic price display, and real-time inventory updates.
+                        An automated notification system that alerts HR, Office, Store, and Lawyer departments about new, updated, or deleted projects. Ensures every department is always informed.
                     </p>
                     <div class="system-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>QR code scanning for items</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Automatic price display</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Cash transaction processing</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Real-time inventory updates</span>
-                        </div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Real-time project alerts</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Color-coded status (New, Edit, Delete)</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Department confirmation tracking</span></div>
+                        <div class="feature-item"><span class="feature-icon">✅</span><span>Detailed review dialog</span></div>
                     </div>
                     <div class="system-card-tech">
                         <span class="tech-pill">C#</span>
                         <span class="tech-pill">.NET Framework</span>
                         <span class="tech-pill">SQL Server</span>
-                        <span class="tech-pill">QR Scanner</span>
-                    </div>
-                </div>
-
-                <!-- System 4: Data Integration -->
-                <div class="system-card reveal" style="--stagger-index:3">
-                    <div class="system-card-header">
-                        <div class="system-card-icon">🔗</div>
-                        <div class="system-card-info">
-                            <h3>Data Integration</h3>
-                            <span class="system-card-category">.NET Framework · SQL</span>
-                        </div>
-                        <div class="system-card-number">04</div>
-                    </div>
-                    <p class="system-card-description">
-                        Robust data integration layer connecting all systems with SQL Server, secure backups, and real-time synchronization across the entire platform.
-                    </p>
-                    <div class="system-card-features">
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>SQL Server database management</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Secure data backup & recovery</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>Real-time data synchronization</span>
-                        </div>
-                        <div class="feature-item">
-                            <span class="feature-icon">✅</span>
-                            <span>CRUD operations with .NET</span>
-                        </div>
-                    </div>
-                    <div class="system-card-tech">
-                        <span class="tech-pill">C#</span>
-                        <span class="tech-pill">SQL Server</span>
-                        <span class="tech-pill">Azure</span>
-                        <span class="tech-pill">Sync</span>
+                        <span class="tech-pill">Workflow</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== STATS SECTION ===== -->
+    <!-- ===== NEW STATS SECTION (REDESIGNED) ===== -->
     <section class="tools-stats-section section-tight">
         <div class="container">
-            <div class="stats-banner reveal">
-                <div class="stats-banner-grid">
-                    <div class="stats-banner-item">
-                        <span class="stats-banner-number">4</span>
-                        <span class="stats-banner-label">Systems Built</span>
-                    </div>
-                    <div class="stats-banner-divider"></div>
-                    <div class="stats-banner-item">
-                        <span class="stats-banner-number">300+</span>
-                        <span class="stats-banner-label">Users Supported</span>
-                    </div>
-                    <div class="stats-banner-divider"></div>
-                    <div class="stats-banner-item">
-                        <span class="stats-banner-number">100%</span>
-                        <span class="stats-banner-label">Data Integrity</span>
-                    </div>
-                    <div class="stats-banner-divider"></div>
-                    <div class="stats-banner-item">
-                        <span class="stats-banner-number">24/7</span>
-                        <span class="stats-banner-label">Operations</span>
-                    </div>
+            <div class="stats-modern-grid">
+                <div class="stat-card-modern reveal" style="--stagger-index:0">
+                    <div class="stat-icon-modern">📦</div>
+                    <span class="stat-number-modern">3</span>
+                    <span class="stat-label-modern">Systems Built</span>
+                </div>
+                <div class="stat-card-modern reveal" style="--stagger-index:1">
+                    <div class="stat-icon-modern">👥</div>
+                    <span class="stat-number-modern">300+</span>
+                    <span class="stat-label-modern">Users Supported</span>
+                </div>
+                <div class="stat-card-modern reveal" style="--stagger-index:2">
+                    <div class="stat-icon-modern">🛡️</div>
+                    <span class="stat-number-modern">100%</span>
+                    <span class="stat-label-modern">Data Integrity</span>
+                </div>
+                <div class="stat-card-modern reveal" style="--stagger-index:3">
+                    <div class="stat-icon-modern">⚡</div>
+                    <span class="stat-number-modern">24/7</span>
+                    <span class="stat-label-modern">Operations</span>
                 </div>
             </div>
         </div>
@@ -332,40 +254,6 @@
         color: var(--text-secondary);
         line-height: 1.7;
         margin: 0;
-    }
-
-    .tools-stats {
-        display: flex;
-        align-items: center;
-        gap: var(--space-6);
-        padding-top: var(--space-4);
-        border-top: 1px solid var(--border-subtle);
-        margin-top: var(--space-2);
-    }
-
-    .tools-stat {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .tools-stat-number {
-        font-family: var(--font-display);
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        letter-spacing: -0.01em;
-    }
-
-    .tools-stat-label {
-        font-size: 0.78rem;
-        color: var(--text-muted);
-        font-weight: 400;
-    }
-
-    .tools-stat-divider {
-        width: 1px;
-        height: 32px;
-        background: var(--border-subtle);
     }
 
     /* ===== TOOLS VISUAL ===== */
@@ -478,6 +366,44 @@
             box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
         }
 
+    /* ===== PROOF IMAGE STYLES ===== */
+    .system-card-image-wrapper {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border-subtle);
+        background: var(--bg-void);
+        position: relative;
+        margin-bottom: var(--space-2);
+    }
+
+    .system-card-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.6s var(--ease-out-expo), filter 0.6s ease;
+        cursor: zoom-in;
+        display: block;
+    }
+
+    .system-card:hover .system-card-image {
+        transform: scale(1.08);
+        filter: brightness(1.1);
+    }
+
+    .system-card-image-wrapper::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(to top, var(--bg-surface) 0%, transparent 100%);
+        pointer-events: none;
+    }
+
     .system-card-header {
         display: flex;
         align-items: flex-start;
@@ -572,51 +498,78 @@
         background: rgba(0, 0, 0, 0.2);
     }
 
-    /* ===== STATS BANNER ===== */
+    /* ===== NEW STATS SECTION (REDESIGNED) ===== */
     .tools-stats-section {
         padding: var(--space-6) 0;
     }
 
-    .stats-banner {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-glow);
-        border-radius: var(--radius-lg);
-        padding: var(--space-6) var(--space-8);
-        box-shadow: 0 0 40px rgba(0, 229, 255, 0.03);
-    }
-
-    .stats-banner-grid {
+    .stats-modern-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: var(--space-4);
-        align-items: center;
-        text-align: center;
     }
 
-    .stats-banner-item {
+    .stat-card-modern {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        padding: var(--space-5);
         display: flex;
         flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-2);
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.4s var(--ease-out-expo), border-color 0.4s, box-shadow 0.4s;
     }
 
-    .stats-banner-number {
+        .stat-card-modern::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent-gradient);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .stat-card-modern:hover::before {
+            opacity: 1;
+        }
+
+        .stat-card-modern:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-glow);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+    .stat-icon-modern {
+        font-size: 2.2rem;
+        line-height: 1;
+        margin-bottom: var(--space-1);
+        filter: drop-shadow(0 0 15px rgba(0, 229, 255, 0.2));
+    }
+
+    .stat-number-modern {
         font-family: var(--font-display);
-        font-size: 2.4rem;
+        font-size: 2.2rem;
         font-weight: 700;
-        color: var(--accent-cyan);
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
         line-height: 1.1;
     }
 
-    .stats-banner-label {
-        font-size: 0.78rem;
+    .stat-label-modern {
+        font-size: 0.82rem;
         color: var(--text-muted);
-        font-weight: 400;
-        margin-top: 4px;
-    }
-
-    .stats-banner-divider {
-        width: 1px;
-        height: 40px;
-        background: var(--border-subtle);
+        font-weight: 500;
+        letter-spacing: 0.02em;
     }
 
     /* ===== RESPONSIVE ===== */
@@ -652,30 +605,12 @@
             grid-template-columns: 1fr;
         }
 
-        .stats-banner-grid {
+        .stats-modern-grid {
             grid-template-columns: 1fr 1fr;
-            gap: var(--space-4);
-        }
-
-        .stats-banner-divider {
-            display: none;
-        }
-
-        .stats-banner {
-            padding: var(--space-4);
         }
     }
 
     @@media (max-width: 768px) {
-        .tools-stats {
-            flex-wrap: wrap;
-            gap: var(--space-4);
-        }
-
-        .tools-stat-divider {
-            display: none;
-        }
-
         .systems-grid {
             grid-template-columns: 1fr;
         }
@@ -698,22 +633,20 @@
             font-size: 1.4rem;
         }
 
-        .stats-banner-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-3);
+        .stat-card-modern {
+            padding: var(--space-4);
         }
 
-        .stats-banner-number {
+        .stat-number-modern {
+            font-size: 1.8rem;
+        }
+
+        .stat-icon-modern {
             font-size: 1.8rem;
         }
     }
 
     @@media (max-width: 480px) {
-        .tools-stats {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
         .tools-icon-grid {
             gap: var(--space-2);
         }
@@ -744,25 +677,20 @@
             font-size: 1.2rem;
         }
 
-        .stats-banner-grid {
-            grid-template-columns: 1fr 1fr;
-            gap: var(--space-2);
-        }
-
-        .stats-banner {
-            padding: var(--space-3);
-        }
-
-        .stats-banner-number {
-            font-size: 1.4rem;
-        }
-
-        .stats-banner-label {
-            font-size: 0.65rem;
+        .stats-modern-grid {
+            grid-template-columns: 1fr;
         }
     }
 </style>
 
 @code {
-    // No JavaScript needed - handled by site.js
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Load the JS module from the wwwroot/js folder
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/internal-tools.js");
+            await module.InvokeVoidAsync("initInternalTools");
+        }
+    }
 }
