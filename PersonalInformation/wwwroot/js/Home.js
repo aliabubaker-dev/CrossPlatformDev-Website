@@ -1,123 +1,83 @@
-﻿// ===== HOME PAGE JAVASCRIPT =====
+﻿// Home page behaviour: scroll reveals, counters, process line, subtle parallax.
+// Nothing here hides content that is already on screen, so a Blazor re-render cannot cause a flash.
+(function () {
+    'use strict';
+    let cleanups = [];
+    const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
+    const easeOut = (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t));
 
-// ===== SCROLL REVEAL =====
-function initScrollReveal() {
-    const targets = document.querySelectorAll('.reveal:not([data-observed])');
-    if (!targets.length) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
-
-    targets.forEach(el => {
-        el.setAttribute('data-observed', 'true');
-        observer.observe(el);
-    });
-}
-
-// ===== CODE BLOCK TYPING EFFECT - COLORFUL =====
-function initCodeTyping() {
-    const el = document.getElementById('code-body');
-    if (!el || el.getAttribute('data-typed') === 'true') return;
-    el.setAttribute('data-typed', 'true');
-
-    el.innerHTML = '';
-
-    const lines = [
-        // Comments - bright green
-        { text: '// ════════════════════════════════════════', cls: 'code-comment' },
-        { text: '//  👨‍💻 Full-Stack Developer · 5+ years', cls: 'code-comment' },
-        { text: '//  🚀 Building production software since 2019', cls: 'code-comment' },
-        { text: '// ════════════════════════════════════════', cls: 'code-comment' },
-        { text: '', cls: '' },
-        // Imports - purple
-        { text: 'import { experience } from "./career";', cls: 'code-import' },
-        { text: 'import { projects } from "./portfolio";', cls: 'code-import' },
-        { text: '', cls: '' },
-        // Skills object
-        { text: 'const skills = {', cls: 'code-keyword' },
-        { text: '  🎨 frontend: "React, TypeScript, Bootstrap",', cls: 'code-string' },
-        { text: '  ⚡ backend: "C#, .NET Core, ASP.NET, Node.js",', cls: 'code-string' },
-        { text: '  📱 mobile: "Android, iOS, Cross-platform",', cls: 'code-string' },
-        { text: '  ☁️ cloud: "Azure, Heroku, Cloudinary",', cls: 'code-string' },
-        { text: '  🗄️ database: "SQL Server, MySQL, MongoDB",', cls: 'code-string' },
-        { text: '  🔧 tools: "Git, Azure DevOps, Postman, OWASP ZAP",', cls: 'code-string' },
-        { text: '  📋 methodologies: "Agile, Scrum, TDD, RESTful APIs",', cls: 'code-string' },
-        { text: '};', cls: 'code-keyword' },
-        { text: '', cls: '' },
-        // Current role - orange
-        { text: 'const currentRole = {', cls: 'code-keyword' },
-        { text: '  💼 title: ".NET Software Developer",', cls: 'code-string' },
-        { text: '  🏢 company: "Gerrie Electric",', cls: 'code-string' },
-        { text: '  📅 since: "September 2024",', cls: 'code-string' },
-        { text: '  🎯 focus: "APIs, Full-stack, Cloud",', cls: 'code-string' },
-        { text: '};', cls: 'code-keyword' },
-        { text: '', cls: '' },
-        // Certifications - green
-        { text: 'const certifications = [', cls: 'code-keyword' },
-        { text: '  ✅ "Microsoft Azure",', cls: 'code-string' },
-        { text: '  ✅ "EAP Certified",', cls: 'code-string' },
-        { text: '  ✅ "Worker Health & Safety",', cls: 'code-string' },
-        { text: '];', cls: 'code-keyword' },
-        { text: '', cls: '' },
-        // Export - bright cyan
-        { text: 'export default { skills, currentRole, certifications };', cls: 'code-export' },
-        { text: '', cls: '' },
-        { text: '// 🎉 Ready to build something amazing!', cls: 'code-comment' },
-        { text: '$', cls: 'code-prompt' },
-    ];
-
-    let index = 0;
-    let charIndex = 0;
-    let currentSpan = null;
-
-    function typeNext() {
-        if (index >= lines.length) {
-            return;
-        }
-
-        if (charIndex === 0) {
-            const lineEl = document.createElement('div');
-            lineEl.className = 'code-line';
-            const indentLines = [7, 8, 9, 10, 11, 12, 13, 18, 19, 20, 21, 25, 26, 27];
-            if (indentLines.includes(index)) lineEl.classList.add('code-indent');
-            if (index === lines.length - 1) lineEl.className = 'code-line';
-
-            currentSpan = document.createElement('span');
-            if (lines[index].cls) currentSpan.className = lines[index].cls;
-            lineEl.appendChild(currentSpan);
-            el.appendChild(lineEl);
-        }
-
-        const line = lines[index];
-        if (line.text.length > 0) {
-            currentSpan.textContent += line.text[charIndex];
-            charIndex++;
-        }
-
-        if (charIndex >= line.text.length) {
-            charIndex = 0;
-            index++;
-            const delay = line.text === '' ? 100 : 120;
-            setTimeout(typeNext, delay);
-        } else {
-            setTimeout(typeNext, 15);
-        }
+    function count(el) {
+        const target = parseFloat(el.dataset.count), start = performance.now();
+        (function frame(now) {
+            const p = Math.min(1, (now - start) / 1500);
+            el.textContent = Math.round(target * easeOut(p));
+            if (p < 1) requestAnimationFrame(frame);
+        })(start);
     }
 
-    setTimeout(typeNext, 600);
-}
+    window.initHomePage = function () {
+        window.disposeHomePage();
+        const root = document.querySelector('.hx-root');
+        if (!root) return;
 
-// ===== EXPOSE FUNCTION TO GLOBAL WINDOW =====
-window.initHomePage = function () {
-    initScrollReveal();
-    initCodeTyping();
-    if (typeof window.initMobileMenu === 'function') {
-        window.initMobileMenu();
-    }
-};
+        const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const canHover = matchMedia('(hover: hover) and (pointer: fine)').matches;
+        const fold = window.innerHeight * 0.92;
+        const on = (t, e, f, o) => { t.addEventListener(e, f, o); cleanups.push(() => t.removeEventListener(e, f, o)); };
+
+        // ----- scroll reveal + counters: only for elements still below the fold -----
+        if (!reduce && 'IntersectionObserver' in window) {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((e) => {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.remove('hx-pre');
+                    e.target.querySelectorAll('[data-count]').forEach(count);
+                    io.unobserve(e.target);
+                });
+            }, { threshold: 0.15 });
+            root.querySelectorAll('[data-reveal]').forEach((el) => {
+                if (el.getBoundingClientRect().top > fold) {
+                    el.classList.add('hx-pre');
+                    el.querySelectorAll('[data-count]').forEach((c) => { c.textContent = '0'; });
+                    io.observe(el);
+                }
+            });
+            cleanups.push(() => io.disconnect());
+        }
+
+        // ----- process line fills while the section scrolls through -----
+        const steps = root.querySelector('.hx-steps');
+        if (steps && !reduce) {
+            const items = [...steps.children];
+            let tick = false;
+            const update = () => {
+                const r = steps.getBoundingClientRect();
+                const p = clamp((window.innerHeight * 0.75 - r.top) / r.height, 0, 1);
+                steps.style.setProperty('--p', p.toFixed(3));
+                items.forEach((li, i) => li.classList.toggle('is-on', p >= (i + 0.2) / items.length));
+                tick = false;
+            };
+            on(window, 'scroll', () => { if (!tick) { tick = true; requestAnimationFrame(update); } }, { passive: true });
+            update();
+        } else if (steps) {
+            [...steps.children].forEach((li) => li.classList.add('is-on'));
+        }
+
+        // ----- hero parallax (2D, mouse only) -----
+        const art = root.querySelector('.hx-art');
+        if (art && canHover && !reduce) {
+            const hero = root.querySelector('.hx-hero');
+            on(hero, 'pointermove', (e) => {
+                const r = hero.getBoundingClientRect();
+                art.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+                art.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+            });
+            on(hero, 'pointerleave', () => { art.style.setProperty('--px', 0); art.style.setProperty('--py', 0); });
+        }
+    };
+
+    window.disposeHomePage = function () {
+        cleanups.forEach((fn) => { try { fn(); } catch (e) { /* ignore */ } });
+        cleanups = [];
+    };
+})();

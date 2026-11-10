@@ -1,150 +1,300 @@
 ﻿@page "/"
+@using System.Text.Json
+@implements IAsyncDisposable
 @inject IJSRuntime JS
+@inject NavigationManager Nav
 
-<SeoHead Title="Creating Website & System Management | CrossPlatformDev"
-         Description="Expert cross platform development services. We build business websites, mobile apps, POS software, and custom system management tools."
+<SeoHead Title="Website & System Management Software | CrossPlatformDev"
+         Description="CrossPlatformDev builds business websites, Android and iOS apps, and custom POS and inventory systems that ship on time. Start your project today."
          Path="/" />
 
-<div class="page-enter">
+<HeadContent>
+    <script type="application/ld+json">@((MarkupString)_jsonLd)</script>
+</HeadContent>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero section">
-        <div class="container">
-            <div class="hero-grid-new">
-                <div class="hero-content">
-                    <div class="hero-badge reveal" style="--stagger-index:0">
-                        <span class="badge-dot"></span>
-                        <span>Available for projects</span>
-                    </div>
-                    <h1 class="hero-headline reveal" style="--stagger-index:1">
-                        <span class="hero-line">Creating Website & System Management Solutions.</span>
-                    </h1>
-                    <p class="hero-description reveal" style="--stagger-index:2">
-                        CrossPlatformDev provides expert cross platform development services.
-                        We build business websites, mobile apps, POS software, and custom system management tools that ship on time and solve real problems.
-                    </p>
-                    <div class="hero-actions-new reveal" style="--stagger-index:3">
-                        <a href="/contact" class="btn btn-primary btn-large">
-                            <span>Start a Project</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                        </a>
-                        <a href="/portfolio" class="btn btn-ghost btn-large">View Work</a>
-                    </div>
-                    <div class="hero-trust reveal" style="--stagger-index:4">
-                        <div class="trust-item">
-                            <span class="trust-number">5+</span>
-                            <span class="trust-label">Years Experience</span>
+<div class="hx-root">
+
+    <!-- HERO -->
+    <section class="hx-hero" aria-labelledby="hx-h1">
+        <div class="container hx-hero-grid">
+            <div class="hx-copy">
+                <p class="hx-status"><span class="hx-pulse"></span>Taking on new projects</p>
+                <h1 id="hx-h1" class="hx-h1">Website creation &amp; system management software for growing businesses</h1>
+                <p class="hx-lead">
+                    CrossPlatformDev designs and builds business websites, Android and iOS apps, and custom POS and
+                    inventory systems: software that ships on time and solves real operational problems.
+                </p>
+                <div class="hx-actions">
+                    <a href="/contact" class="hx-btn hx-btn-primary">Start a project <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+                    <a href="/portfolio" class="hx-btn hx-btn-ghost">See our work</a>
+                </div>
+                <dl class="hx-facts">
+                    <div><dt>Experience</dt><dd>5+ years</dd></div>
+                    <div><dt>Support cases</dt><dd>300+</dd></div>
+                    <div><dt>Platforms</dt><dd>Web, Android, iOS</dd></div>
+                </dl>
+            </div>
+
+            <div class="hx-art" aria-hidden="true">
+                <div class="hx-layer hx-site" style="--d:12">
+                    <div class="hx-win-bar"><i></i><i></i><i></i></div>
+                    <div class="hx-site-body"><b class="a"></b><b class="b"></b><b class="c"></b><span></span></div>
+                </div>
+
+                <div class="hx-layer hx-win" style="--d:26">
+                    <div class="hx-win-bar"><i></i><i></i><i></i><em>Inventory &amp; sales</em></div>
+                    <div class="hx-win-body">
+                        <div class="hx-kpis">
+                            <div><small>Orders today</small><strong class="hx-count"></strong></div>
+                            <div><small>Low stock</small><strong>6</strong></div>
                         </div>
-                        <div class="trust-divider"></div>
-                        <div class="trust-item">
-                            <span class="trust-number">300+</span>
-                            <span class="trust-label">Support Cases</span>
+                        <div class="hx-chart">
+                            <b style="--h:42%;--t:0"></b><b style="--h:66%;--t:1"></b><b style="--h:52%;--t:2"></b><b style="--h:84%;--t:3"></b>
+                            <b style="--h:60%;--t:4"></b><b style="--h:92%;--t:5"></b><b style="--h:74%;--t:6"></b>
                         </div>
-                        <div class="trust-divider"></div>
-                        <div class="trust-item">
-                            <span class="trust-number">100%</span>
-                            <span class="trust-label">Test Coverage</span>
-                        </div>
+                        <ul class="hx-rows">
+                            <li style="--i:0"><span>Olive oil 1L</span><em>In stock</em></li>
+                            <li style="--i:1"><span>Basmati rice 5kg</span><em>In stock</em></li>
+                            <li style="--i:2" class="low"><span>Tea, loose leaf</span><em>Low</em></li>
+                            <li style="--i:3"><span>Sunflower oil 2L</span><em>In stock</em></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="hero-visual reveal" style="--stagger-index:2">
-                    <div class="hero-orb"></div>
-                    <div class="hero-code-block">
-                        <div class="code-header">
-                            <span class="code-dot red"></span>
-                            <span class="code-dot yellow"></span>
-                            <span class="code-dot green"></span>
-                            <span class="code-title">developer@ali ~/portfolio</span>
-                            <span class="code-branch">main</span>
-                            <span class="code-status">●</span>
-                        </div>
-                        <div class="code-body" id="code-body">
-                            <!-- Content populated by JavaScript typing effect -->
-                        </div>
-                    </div>
+                <div class="hx-layer hx-phone" style="--d:42">
+                    <div class="hx-notch"></div>
+                    <div class="hx-note"><i></i><span><b></b><b class="s"></b></span></div>
+                    <div class="hx-ph-card"></div>
+                    <div class="hx-ph-line"></div><div class="hx-ph-line s"></div>
+                    <div class="hx-tabs"><i class="on"></i><i></i><i></i></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== SERVICES ===== -->
-    <section class="section-tight">
-        <div class="container">
-            <!-- NEW: Redesigned Section Header -->
-            <div class="section-header-modern reveal">
-                <div class="section-label">
-                    <span class="label-line"></span>
-                    <span class="label-text">What I Build</span>
-                    <span class="label-line"></span>
-                </div>
-                <h2 class="section-title">One developer, <span class="grad-text">every layer of your product.</span></h2>
-                <p class="section-subtitle">From websites to mobile apps to full business systems — I build software that ships.</p>
-            </div>
+    <!-- TECH MARQUEE -->
+    <section class="hx-marq" aria-label="Technologies and tools">
+        <div class="hx-marq-track">
+            @for (var pass = 0; pass < 2; pass++)
+            {
+                <ul aria-hidden="@(pass == 1 ? "true" : "false")">
+                    @foreach (var t in _tech)
+                    {
+                        <li>@t</li>
+                    }
+                </ul>
+            }
+        </div>
+    </section>
 
-            <div class="grid-3">
-                <div class="reveal card hover-lift" style="--stagger-index:0">
-                    <div class="card-icon">🌐</div>
-                    <h3>Website Development</h3>
-                    <p>Business websites, landing pages, and web apps built with modern frameworks — fast, responsive, and easy to update.</p>
-                    <div class="tag-row">
-                        <span class="pill">Business Websites</span>
-                        <span class="pill">Landing Pages</span>
-                        <span class="pill">Web Apps</span>
+    <!-- SERVICES -->
+    <section class="hx-sec" aria-labelledby="hx-services-title">
+        <div class="container">
+            <header class="hx-head" data-reveal>
+                <h2 id="hx-services-title" class="hx-h2">Every layer of your product, built in one place</h2>
+                <p class="hx-sub">Websites, mobile apps and full business systems, built end to end from first call to launch.</p>
+            </header>
+
+            <div class="hx-bento">
+                <article class="hx-card hx-c-web" data-reveal style="--i:0">
+                    <div class="hx-ui" aria-hidden="true">
+                        <div class="hx-win-bar"><i></i><i></i><i></i></div>
+                        <div class="hx-ui-site"><b class="a"></b><b class="b"></b><b class="c"></b><span></span></div>
                     </div>
-                </div>
-                <div class="reveal card hover-lift" style="--stagger-index:1">
-                    <div class="card-icon">📱</div>
-                    <h3>Mobile & Android Apps</h3>
-                    <p>Native and cross-platform mobile applications for Android and iOS, from concept through app store launch.</p>
-                    <div class="tag-row">
-                        <span class="pill">Android</span>
-                        <span class="pill">Cross-Platform</span>
-                        <span class="pill">App Store</span>
+                    <h3>Website development</h3>
+                    <p>Business websites, landing pages and web apps built with modern frameworks. Fast, responsive and easy to update.</p>
+                    <ul class="hx-pills"><li>Business websites</li><li>Landing pages</li><li>Web apps</li></ul>
+                    <a class="hx-link" href="/services">Website development services <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="hx-card hx-c-mob" data-reveal style="--i:1">
+                    <div class="hx-ui hx-ui-mob" aria-hidden="true">
+                        <div class="hx-ring"></div>
+                        <div class="hx-ui-list"><b></b><b class="s"></b><b></b></div>
                     </div>
-                </div>
-                <div class="reveal card hover-lift" style="--stagger-index:2">
-                    <div class="card-icon">🖥️</div>
-                    <h3>Business Management Systems</h3>
-                    <p>Custom systems for real operations — inventory, POS, and management software built for supermarkets and growing businesses.</p>
-                    <div class="tag-row">
-                        <span class="pill">Inventory</span>
-                        <span class="pill">POS</span>
-                        <span class="pill">Supermarket Systems</span>
+                    <h3>Mobile &amp; Android apps</h3>
+                    <p>Native and cross-platform apps for Android and iOS, from the first concept to app store launch.</p>
+                    <ul class="hx-pills"><li>Android</li><li>Cross-platform</li><li>App store</li></ul>
+                    <a class="hx-link" href="/services">Mobile app development <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="hx-card hx-c-sys" data-reveal style="--i:2">
+                    <div class="hx-card-text">
+                        <h3>Business management systems</h3>
+                        <p>Inventory, POS and management software built around how your business really runs, for supermarkets and growing businesses.</p>
+                        <ul class="hx-pills"><li>Inventory</li><li>POS</li><li>Supermarket systems</li></ul>
+                        <a class="hx-link" href="/portfolio">Business system projects <span aria-hidden="true">→</span></a>
                     </div>
-                </div>
+                    <div class="hx-ui hx-ui-sys" aria-hidden="true">
+                        <div class="hx-chart"><b style="--h:40%;--t:0"></b><b style="--h:70%;--t:1"></b><b style="--h:55%;--t:2"></b><b style="--h:90%;--t:3"></b><b style="--h:65%;--t:4"></b><b style="--h:80%;--t:5"></b></div>
+                        <ul class="hx-rows"><li style="--i:0"><span>Order 1042</span><em>Paid</em></li><li style="--i:1"><span>Order 1043</span><em>Packed</em></li><li style="--i:2"><span>Order 1044</span><em>New</em></li></ul>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA ===== -->
-    <section class="section-tight">
+    <!-- STATS -->
+    <section class="hx-sec hx-tight" aria-label="Experience at a glance">
+        <div class="container hx-stats">
+            <div data-reveal style="--i:0"><strong><span data-count="5">5</span>+</strong><span>years building production software</span></div>
+            <div data-reveal style="--i:1"><strong><span data-count="300">300</span>+</strong><span>support cases handled after launch</span></div>
+            <div data-reveal style="--i:2"><strong>3</strong><span>platforms: web, mobile and business systems</span></div>
+        </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="hx-sec hx-tight" aria-labelledby="hx-process-title">
         <div class="container">
-            <div class="reveal cta-banner-modern">
-                <!-- NEW: Redesigned CTA Label -->
-                <div class="cta-label">
-                    <span class="cta-label-line"></span>
-                    <span class="cta-label-text">Ready to Build</span>
-                    <span class="cta-label-line"></span>
-                </div>
-                <h2 class="cta-title">Let's turn your idea into <span class="grad-text">working software</span>.</h2>
-                <p class="cta-description">From websites to full business systems — I build software that actually ships.</p>
-                <a href="/contact" class="btn btn-primary btn-large cta-button">
-                    <span>Start a Project</span>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                </a>
+            <header class="hx-head" data-reveal>
+                <h2 id="hx-process-title" class="hx-h2">From first call to live product</h2>
+            </header>
+            <ol class="hx-steps">
+                <li><h3>Discover</h3><p>We map your goals, your users and the real problem the software has to solve.</p></li>
+                <li><h3>Design</h3><p>Clear screens and a technical plan agreed before a single line of code is written.</p></li>
+                <li><h3>Build</h3><p>Iterative development with testing at every step, so you see real progress early.</p></li>
+                <li><h3>Ship &amp; support</h3><p>Launch, monitor and keep improving, backed by 300+ support cases handled.</p></li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="hx-sec hx-tight" aria-labelledby="hx-faq-title">
+        <div class="container hx-faq-wrap">
+            <header class="hx-head" data-reveal>
+                <h2 id="hx-faq-title" class="hx-h2">Questions, answered</h2>
+            </header>
+            <div class="hx-faq">
+                @foreach (var (q, a) in _faq)
+                {
+                    <details class="hx-faq-item" data-reveal>
+                        <summary><span>@q</span><i aria-hidden="true"></i></summary>
+                        <p>@a</p>
+                    </details>
+                }
             </div>
         </div>
     </section>
 
+    <!-- CTA -->
+    <section class="hx-sec hx-tight" aria-labelledby="hx-cta-title">
+        <div class="container">
+            <div class="hx-cta" data-reveal>
+                <h2 id="hx-cta-title">Let's turn your idea into working software.</h2>
+                <p>Describe your idea and get a clear scope, timeline and next steps.</p>
+                <a href="/contact" class="hx-btn hx-btn-dark">Start a project <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg></a>
+            </div>
+        </div>
+    </section>
 </div>
 
 @code {
+    private string _jsonLd = "";
+
+    private static readonly string[] _tech =
+    {
+        "C#", ".NET Core", "ASP.NET", "Node.js", "React", "TypeScript", "Bootstrap",
+        "Android", "iOS", "Azure", "Heroku", "Cloudinary",
+        "SQL Server", "MySQL", "MongoDB", "Git", "Azure DevOps", "Postman", "OWASP ZAP"
+    };
+
+    // Edit freely. These feed both the visible FAQ and the Google structured data.
+    private static readonly (string Q, string A)[] _faq =
+    {
+        ("What does CrossPlatformDev build?",
+         "Business websites, landing pages, web apps, Android and cross-platform mobile apps, and custom business management systems such as inventory and POS software."),
+        ("Do you build software for supermarkets and retail?",
+         "Yes. Inventory, POS, and management systems for supermarkets and growing businesses are a core service."),
+        ("Can you take a mobile app from idea to app store launch?",
+         "Yes. Mobile apps are handled from the first concept through app store launch, for both Android and iOS."),
+        ("How do I start a project?",
+         "Send a message through the contact page describing your idea, and we will talk through the scope and the next steps.")
+    };
+
+    protected override void OnInitialized()
+    {
+        var baseUri = Nav.BaseUri.TrimEnd('/');
+
+        var graph = new object[]
+        {
+            new Dictionary<string, object>
+            {
+                ["@type"] = "WebSite", ["@id"] = baseUri + "/#website", ["url"] = baseUri + "/",
+                ["name"] = "CrossPlatformDev", ["inLanguage"] = "en",
+                ["publisher"] = new Dictionary<string, object> { ["@id"] = baseUri + "/#business" }
+            },
+            new Dictionary<string, object>
+            {
+                ["@type"] = "WebPage", ["@id"] = baseUri + "/#webpage", ["url"] = baseUri + "/",
+                ["name"] = "Website & System Management Software | CrossPlatformDev",
+                ["isPartOf"] = new Dictionary<string, object> { ["@id"] = baseUri + "/#website" },
+                ["about"] = new Dictionary<string, object> { ["@id"] = baseUri + "/#business" },
+                ["inLanguage"] = "en"
+            },
+            new Dictionary<string, object>
+            {
+                ["@type"] = "ProfessionalService", ["@id"] = baseUri + "/#business",
+                ["name"] = "CrossPlatformDev", ["url"] = baseUri + "/",
+                ["logo"] = baseUri + "/img/logo-icon.png", ["image"] = baseUri + "/og-cover.png",
+                ["description"] = "Business websites, mobile apps, POS software and custom system management tools.",
+                ["email"] = "aliabdulsameea69@gmail.com", ["telephone"] = "+12893391367",
+                ["founder"] = new Dictionary<string, object>
+                {
+                    ["@type"] = "Person", ["name"] = "Ali Abubaker", ["jobTitle"] = ".NET Software Developer"
+                },
+                ["knowsAbout"] = _tech,
+                ["makesOffer"] = new[]
+                {
+                    Offer("Website Development", "Business websites, landing pages and web apps built with modern frameworks."),
+                    Offer("Mobile & Android App Development", "Native and cross-platform Android and iOS apps, from concept to app store launch."),
+                    Offer("Business Management Systems", "Inventory, POS and management software for supermarkets and growing businesses.")
+                },
+                ["sameAs"] = new[]
+                {
+                    "https://github.com/ali-abdulsameea-abubaker",
+                    "https://www.linkedin.com/in/ali-abubaker-a840081a0/",
+                    "https://x.com/AliAbubakerDev",
+                    "https://www.youtube.com/@aliabdulsameea7569"
+                }
+            },
+            new Dictionary<string, object>
+            {
+                ["@type"] = "FAQPage",
+                ["mainEntity"] = _faq.Select(f => new Dictionary<string, object>
+                {
+                    ["@type"] = "Question", ["name"] = f.Q,
+                    ["acceptedAnswer"] = new Dictionary<string, object> { ["@type"] = "Answer", ["text"] = f.A }
+                }).ToArray()
+            }
+        };
+
+        _jsonLd = JsonSerializer.Serialize(new Dictionary<string, object>
+        {
+            ["@context"] = "https://schema.org",
+            ["@graph"] = graph
+        }).Replace("<", "\\u003c");
+    }
+
+    private static Dictionary<string, object> Offer(string name, string description) => new()
+    {
+        ["@type"] = "Offer",
+        ["itemOffered"] = new Dictionary<string, object>
+        {
+            ["@type"] = "Service",
+            ["name"] = name,
+            ["description"] = description
+        }
+    };
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (firstRender)
-        {
-            await JS.InvokeVoidAsync("initHomePage");
-        }
+        if (firstRender) await JS.InvokeVoidAsync("initHomePage");
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        try { await JS.InvokeVoidAsync("disposeHomePage"); }
+        catch (JSDisconnectedException) { }
+        catch (InvalidOperationException) { }
     }
 }

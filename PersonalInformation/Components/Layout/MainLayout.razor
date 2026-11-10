@@ -4,11 +4,13 @@
 @inject ThemeService ThemeService
 @implements IDisposable
 
+<a class="skip-link" href="#main">Skip to main content</a>
+
 <div class="app-shell @(ThemeService.IsDark ? "dark-theme" : "light-theme")" id="app-root">
     <NavMenu />
 
     <div class="content-area">
-        <main class="page-enter">
+        <main id="main" class="page-enter" tabindex="-1">
             @Body
         </main>
         <Footer />
