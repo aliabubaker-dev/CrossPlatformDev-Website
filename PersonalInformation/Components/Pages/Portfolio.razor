@@ -1,7 +1,8 @@
 ﻿@page "/portfolio"
+@inject IJSRuntime JS
 
-<SeoHead Title="Portfolio — Projects by CrossPlatformDev"
-         Description="A showcase of custom software projects including full-stack platforms, business tools, and e-commerce solutions."
+<SeoHead Title="Portfolio | Custom POS Software & Business Systems" 
+         Description="View my portfolio of custom POS software, supermarket system management tools, and cross platform development projects. See how I build software that works." 
          Path="/portfolio" />
 
 
@@ -17,13 +18,12 @@
                         <span>Portfolio</span>
                     </div>
                     <h1 class="portfolio-headline reveal" style="--stagger-index:1">
-                        <span class="portfolio-line">Selected</span>
-                        <span class="portfolio-line portfolio-line-gradient">work.</span>
-                    </h1>
-                    <p class="portfolio-description reveal" style="--stagger-index:2">
-                        A look at some of the projects I've built — from full-stack platforms to
-                        business systems and internal tools.
-                    </p>
+    <span class="portfolio-line">Selected</span>
+    <span class="portfolio-line portfolio-line-gradient">Work & Projects.</span>
+</h1>
+<p class="portfolio-description reveal" style="--stagger-index:2">
+    A look at custom POS software, system management tools, and cross platform development projects I've built — from full-stack platforms to business systems.
+</p>
                     <div class="portfolio-stats reveal" style="--stagger-index:3">
                         <div class="portfolio-stat">
                             <span class="portfolio-stat-number">12</span>
@@ -237,3 +237,18 @@
     </section>
 
 </div>
+
+
+                @code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Load the JS module for the portfolio page
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Portfolio.razor.js");
+            
+            // Run the initialization
+            await module.InvokeVoidAsync("portfolioPageInit");
+        }
+    }
+}

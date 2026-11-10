@@ -1,7 +1,8 @@
 ﻿@page "/about"
+@inject IJSRuntime JS
 
-<SeoHead Title="About Ali Abubaker — Full-Stack Software Developer"
-         Description="Senior full-stack developer in Hamilton, ON. 5+ years experience in .NET, Node.js, and cloud architecture."
+<SeoHead Title="Hire a .NET Full-Stack Developer | Ali Abubaker" 
+         Description="Looking to hire a cross platform developer? Ali Abubaker is a senior full-stack .NET developer in Hamilton, ON with 5+ years of experience in C#, Blazor, Azure, and mobile app development." 
          Path="/about" />
 
 <div class="page-enter">
@@ -15,10 +16,10 @@
                         <span class="badge-dot"></span>
                         <span>About me</span>
                     </div>
-                    <h1 class="about-headline reveal" style="--stagger-index:1">
-                        <span class="about-line">Hi, I'm Ali.</span>
-                        <span class="about-line about-line-gradient">I build software that works.</span>
-                    </h1>
+                   <h1 class="about-headline reveal" style="--stagger-index:1">
+    <span class="about-line">Hi, I'm Ali Abubaker.</span>
+    <span class="about-line about-line-gradient">Full-Stack .NET & Cross Platform Developer.</span>
+</h1>
                     <p class="about-description reveal" style="--stagger-index:2">
                         Senior software developer with 5+ years of experience in full-stack development, IT infrastructure,
                         and operations. I've built and maintained production .NET and Node.js applications, with a strong
@@ -63,11 +64,9 @@
                         <strong>Advanced Diploma in Software Development</strong> from Mohawk College and a
                         <strong>Microsoft Azure certification</strong>.
                     </p>
-                    <p>
-                        I'm passionate about leveraging technology to solve real-world problems. My experience
-                        spans full-stack development, cloud architecture, and IT operations — all with a focus
-                        on building software that actually ships.
-                    </p>
+                  <p>
+    I specialize in providing high-quality cross platform development services. Whether you need a custom business website, a mobile application, or a complete system management tool (like a POS system for supermarkets), I have the skills to build it. My experience spans full-stack development, cloud architecture, and IT operations — all with a focus on building software that actually ships.
+</p>
                     <div class="bio-highlights">
                         <div class="highlight-item">
                             <span class="highlight-icon">📍</span>
@@ -379,6 +378,16 @@
     </section>
 
 </div>
-
-@* JavaScript moved to separate file *@
-<script src="Components/Pages/About.razor.js"></script>
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // This tells Blazor to load the JavaScript file into the browser
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/About.razor.js");
+            
+            // Now we can safely call the function
+            await module.InvokeVoidAsync("aboutPageInit");
+        }
+    }
+}

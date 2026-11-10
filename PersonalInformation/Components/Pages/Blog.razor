@@ -9,8 +9,8 @@
 
 
 
-<SeoHead Title="Blog — Notes on Web Development & Business Systems"
-         Description="Articles on web development, mobile apps, and building business software that works."
+<SeoHead Title="Web Development Blog | POS System & Software Guides" 
+         Description="Learn about creating a website, how to make a POS system, and custom software development. Read expert guides on cross platform development services and business systems." 
          Path="/blog" />
 
 <div class="page-enter">
@@ -25,13 +25,12 @@
                         <span>Blog</span>
                     </div>
                     <h1 class="blog-headline reveal" style="--stagger-index:1">
-                        <span class="blog-line">Notes from</span>
-                        <span class="blog-line blog-line-gradient">the build.</span>
-                    </h1>
-                    <p class="blog-description reveal" style="--stagger-index:2">
-                        Writing about web development, mobile apps, and what actually matters when building
-                        business software that works.
-                    </p>
+    <span class="blog-line">Web Development &</span>
+    <span class="blog-line blog-line-gradient">Software Guides.</span>
+</h1>
+<p class="blog-description reveal" style="--stagger-index:2">
+    Expert articles on creating a website, how to make a POS system, mobile apps, and building custom business software that actually works.
+</p>
                     <div class="blog-stats reveal" style="--stagger-index:3">
                         <div class="blog-stat">
                             <span class="blog-stat-number">@allPosts.Count</span>
@@ -778,9 +777,16 @@
         allPosts = BlogService.GetAllPosts();
     }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+      protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        await JS.InvokeVoidAsync("siteAnimations.initAll");
+        if (firstRender)
+        {
+            // Load the JS file as a module
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Blog.razor.js");
+            
+            // Call the function
+            await module.InvokeVoidAsync("blogPageInit");
+        }
     }
 
     private async Task SubscribeNewsletter()

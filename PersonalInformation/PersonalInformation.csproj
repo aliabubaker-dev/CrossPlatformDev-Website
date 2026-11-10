@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="Components\Pages\Blog.razor.js" />
+    <Content Include="Components\Pages\BlogPost.razor.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\js\Home.js" />
   </ItemGroup>
 

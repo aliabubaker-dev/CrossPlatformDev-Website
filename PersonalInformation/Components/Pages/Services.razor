@@ -1,7 +1,8 @@
 ﻿@page "/services"
+@inject IJSRuntime JS
 
-<SeoHead Title="Web, Mobile & Business System Development Services"
-         Description="Professional website creation, Android/iOS app development, and custom management systems (POS, inventory) for your business."
+<SeoHead Title="Cross Platform Development Services | Web, Mobile & POS" 
+         Description="Expert cross platform development services. We build custom POS software, business websites, mobile apps, and system management tools for growing businesses." 
          Path="/services" />
 
 <div class="page-enter">
@@ -23,10 +24,10 @@
                         <span>What I Build</span>
                         <div class="services-badge-line"></div>
                     </div>
-                    <h1 class="services-headline reveal" style="--stagger-index:1">
-                        <span class="services-line">Custom software</span>
-                        <span class="services-line services-line-gradient">for your business.</span>
-                    </h1>
+                <h1 class="services-headline reveal" style="--stagger-index:1">
+    <span class="services-line">Cross Platform Development</span>
+    <span class="services-line services-line-gradient">Services for your business.</span>
+</h1>
                     <p class="services-description reveal" style="--stagger-index:2">
                         From websites to mobile apps and full business systems — I build software that solves
                         real problems. No templates, just solutions that work for you.
@@ -246,5 +247,15 @@
 </div>
 
 @code {
-    // No JavaScript needed here - handled by site.js
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Load the JS module
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/Services.razor.js");
+            
+            // Run the initialization
+            await module.InvokeVoidAsync("initServicesPage");
+        }
+    }
 }

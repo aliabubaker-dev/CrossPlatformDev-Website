@@ -2,6 +2,13 @@
 @inject PersonalInformation.Services.BlogService BlogService
 @inject IJSRuntime JS
 
+@if (post is not null)
+{
+    <SeoHead Title="@(post.Title + " | CrossPlatformDev Blog")"
+             Description="@post.Excerpt"
+             Path="@($"/blog/{post.Slug}")" />
+}
+
 <div class="page-enter">
     @if (post is null)
     {
@@ -332,7 +339,6 @@
         if (post is not null)
         {
             var index = all.IndexOf(post);
-            // "Next" = newer post (comes before in the list), "Previous" = older post
             nextPost = index > 0 ? all[index - 1] : null;
             previousPost = index < all.Count - 1 ? all[index + 1] : null;
         }
@@ -340,27 +346,13 @@
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
-        if (post is not null)
+        if (post is not null && firstRender)
         {
-            await JS.InvokeVoidAsync("siteAnimations.initAll");
-            if (firstRender)
-            {
-                await JS.InvokeVoidAsync("eval", @"
-                    (function() {
-                        const bar = document.getElementById('reading-progress');
-                        if (!bar) return;
-                        const onScroll = () => {
-                            const doc = document.documentElement;
-                            const scrollTop = doc.scrollTop || document.body.scrollTop;
-                            const scrollHeight = (doc.scrollHeight || document.body.scrollHeight) - doc.clientHeight;
-                            const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-                            bar.style.width = pct + '%';
-                        };
-                        window.addEventListener('scroll', onScroll, { passive: true });
-                        onScroll();
-                    })();
-                ");
-            }
+            // 1. Load the JS module for this specific page
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./Components/Pages/BlogPost.razor.js");
+            
+            // 2. Initialize the reading bar and animations
+            await module.InvokeVoidAsync("blogPostInit");
         }
     }
 }
