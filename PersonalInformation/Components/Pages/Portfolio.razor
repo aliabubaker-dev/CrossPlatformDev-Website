@@ -69,8 +69,8 @@
                 <h2>Things I've<br><span class="grad-text">built and shipped.</span></h2>
             </div>
 
-            <!-- Using a 2-column grid to give all 4 major projects proper space -->
-            <div class="projects-grid-2x2">
+            <!-- Auto-fit grid to beautifully handle 5 items -->
+            <div class="projects-grid-flexible">
 
                 <!-- Project 1: PetWell -->
                 <div class="project-card reveal" style="--stagger-index:0">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Barza Security Website -->
+                <!-- Project 2: Barza Security -->
                 <div class="project-card reveal" style="--stagger-index:1">
                     <div class="project-card-top">
                         <div class="project-card-badge">
@@ -131,7 +131,6 @@
                         <span class="project-tag">C#</span>
                         <span class="project-tag">ASP.NET</span>
                         <span class="project-tag">SQL Server</span>
-                        <span class="project-tag">Bootstrap</span>
                         <span class="project-tag">Leaflet.js</span>
                         <span class="project-tag">CMS</span>
                     </div>
@@ -154,8 +153,47 @@
                     </div>
                 </div>
 
-                <!-- Project 3: Zema Supermarket -->
+                <!-- Project 3: Barza Fire -->
                 <div class="project-card reveal" style="--stagger-index:2">
+                    <div class="project-card-top">
+                        <div class="project-card-badge">
+                            <span class="badge-icon">🔥</span>
+                            <span class="badge-text">Corporate</span>
+                        </div>
+                        <div class="project-card-icon">🚒</div>
+                    </div>
+                    <h3>Barza Fire Systems</h3>
+                    <span class="project-category">.NET / ASP.NET WebForms</span>
+                    <p>A visually striking, highly responsive corporate platform for a fire protection company. Features fluid CSS animations, an interactive map, and hardened security.</p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">WebForms</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Google Maps</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="/portfolio/barza-fire" class="project-link">
+                            <span>Explore Platform</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                        </a>
+                    </div>
+                    <div class="project-card-stats">
+                        <div class="project-stat-item">
+                            <span class="stat-value">1</span>
+                            <span class="stat-label">Month Dev</span>
+                        </div>
+                        <div class="project-stat-divider"></div>
+                        <div class="project-stat-item">
+                            <span class="stat-value">A+</span>
+                            <span class="stat-label">Security</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Zema Supermarket -->
+                <div class="project-card reveal" style="--stagger-index:3">
                     <div class="project-card-top">
                         <div class="project-card-badge">
                             <span class="badge-icon">✨</span>
@@ -192,8 +230,8 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Internal Business Tools -->
-                <div class="project-card reveal" style="--stagger-index:3">
+                <!-- Project 5: Internal Business Tools -->
+                <div class="project-card reveal" style="--stagger-index:4">
                     <div class="project-card-top">
                         <div class="project-card-badge">
                             <span class="badge-icon">🔧</span>
@@ -211,7 +249,6 @@
                         <span class="project-tag">ASP.NET</span>
                         <span class="project-tag">SQL Server</span>
                         <span class="project-tag">WinForms</span>
-                        <span class="project-tag">CRUD</span>
                     </div>
                     <div class="project-links">
                         <a href="/portfolio/internal-tools" class="project-link">
@@ -276,24 +313,18 @@
 </div>
 
 <style>
-    /* Adjusting grid layout for 4 items */
-    .projects-grid-2x2 {
+    /* Flexible grid layout that automatically handles 5 items beautifully */
+    .projects-grid-flexible {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: var(--space-5);
         margin-top: var(--space-6);
     }
 
-        /* Make sure cards in the 2x2 grid stretch correctly */
-        .projects-grid-2x2 .project-card {
+        /* Make sure cards stretch correctly to equal heights */
+        .projects-grid-flexible .project-card {
             height: 100%;
         }
-
-    @@media (max-width: 1024px) {
-        .projects-grid-2x2 {
-            grid-template-columns: 1fr;
-        }
-    }
 </style>
 
 @code {
