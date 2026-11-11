@@ -1,10 +1,9 @@
 ﻿@page "/portfolio"
 @inject IJSRuntime JS
 
-<SeoHead Title="Portfolio | Custom POS Software & Business Systems" 
-         Description="View my portfolio of custom POS software, supermarket system management tools, and cross platform development projects. See how I build software that works." 
+<SeoHead Title="Portfolio | Custom POS Software & Business Systems"
+         Description="View my portfolio of custom POS software, supermarket system management tools, and cross platform development projects. See how I build software that works."
          Path="/portfolio" />
-
 
 <div class="page-enter">
 
@@ -18,12 +17,12 @@
                         <span>Portfolio</span>
                     </div>
                     <h1 class="portfolio-headline reveal" style="--stagger-index:1">
-    <span class="portfolio-line">Selected</span>
-    <span class="portfolio-line portfolio-line-gradient">Work & Projects.</span>
-</h1>
-<p class="portfolio-description reveal" style="--stagger-index:2">
-    A look at custom POS software, system management tools, and cross platform development projects I've built — from full-stack platforms to business systems.
-</p>
+                        <span class="portfolio-line">Selected</span>
+                        <span class="portfolio-line portfolio-line-gradient">Work & Projects.</span>
+                    </h1>
+                    <p class="portfolio-description reveal" style="--stagger-index:2">
+                        A look at custom POS software, system management tools, and cross platform development projects I've built — from full-stack platforms to business systems.
+                    </p>
                     <div class="portfolio-stats reveal" style="--stagger-index:3">
                         <div class="portfolio-stat">
                             <span class="portfolio-stat-number">12</span>
@@ -70,7 +69,9 @@
                 <h2>Things I've<br><span class="grad-text">built and shipped.</span></h2>
             </div>
 
-            <div class="projects-grid">
+            <!-- Using a 2-column grid to give all 4 major projects proper space -->
+            <div class="projects-grid-2x2">
+
                 <!-- Project 1: PetWell -->
                 <div class="project-card reveal" style="--stagger-index:0">
                     <div class="project-card-top">
@@ -113,19 +114,96 @@
                     </div>
                 </div>
 
-                <!-- Project 2: Internal Business Tools - DETAILED -->
-                <div class="project-card reveal project-card-expanded" style="--stagger-index:1">
+                <!-- Project 2: Barza Security Website -->
+                <div class="project-card reveal" style="--stagger-index:1">
+                    <div class="project-card-top">
+                        <div class="project-card-badge">
+                            <span class="badge-icon">🛡️</span>
+                            <span class="badge-text">Enterprise</span>
+                        </div>
+                        <div class="project-card-icon">🏢</div>
+                    </div>
+                    <h3>Barza Security Platform</h3>
+                    <span class="project-category">.NET / ASP.NET MVC</span>
+                    <p>A comprehensive, highly secure web platform for a leading Iraqi security firm. Features a custom CMS, multi-language support, and advanced security protocols.</p>
+
+                    <div class="project-tags">
+                        <span class="project-tag">C#</span>
+                        <span class="project-tag">ASP.NET</span>
+                        <span class="project-tag">SQL Server</span>
+                        <span class="project-tag">Bootstrap</span>
+                        <span class="project-tag">Leaflet.js</span>
+                        <span class="project-tag">CMS</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="/portfolio/barza-security" class="project-link">
+                            <span>Explore Platform</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                        </a>
+                    </div>
+                    <div class="project-card-stats">
+                        <div class="project-stat-item">
+                            <span class="stat-value">3</span>
+                            <span class="stat-label">Months Dev</span>
+                        </div>
+                        <div class="project-stat-divider"></div>
+                        <div class="project-stat-item">
+                            <span class="stat-value">100%</span>
+                            <span class="stat-label">Dynamic CMS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Zema Supermarket -->
+                <div class="project-card reveal" style="--stagger-index:2">
+                    <div class="project-card-top">
+                        <div class="project-card-badge">
+                            <span class="badge-icon">✨</span>
+                            <span class="badge-text">E-Commerce</span>
+                        </div>
+                        <div class="project-card-icon">🛒</div>
+                    </div>
+                    <h3>Zema Supermarket</h3>
+                    <span class="project-category">Full-Stack E-Commerce</span>
+                    <p>A full-featured e-commerce platform for a Mexican supermarket with online ordering, secure payments, location-based delivery, and a powerful admin dashboard.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Node.js</span>
+                        <span class="project-tag">Express</span>
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Stripe</span>
+                        <span class="project-tag">Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="/portfolio/zema-supermarket" class="project-link">
+                            <span>View Project</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                        </a>
+                    </div>
+                    <div class="project-card-stats">
+                        <div class="project-stat-item">
+                            <span class="stat-value">200+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="project-stat-divider"></div>
+                        <div class="project-stat-item">
+                            <span class="stat-value">2024</span>
+                            <span class="stat-label">Completed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Internal Business Tools -->
+                <div class="project-card reveal" style="--stagger-index:3">
                     <div class="project-card-top">
                         <div class="project-card-badge">
                             <span class="badge-icon">🔧</span>
-                            <span class="badge-text">Internal</span>
+                            <span class="badge-text">Internal Systems</span>
                         </div>
                         <div class="project-card-icon">🏢</div>
                     </div>
                     <h3>Internal Business Tools</h3>
-                    <span class="project-category">.NET / ASP.NET</span>
-                    <p>Custom business management systems built for security companies and supermarkets using .NET Framework and C#.</p>
-
+                    <span class="project-category">.NET / ASP.NET / WinForms</span>
+                    <p>Custom business management systems built for security companies and supermarkets. Includes DMS, Operations tracking, and HR notifications.</p>
 
                     <div class="project-tags">
                         <span class="project-tag">C#</span>
@@ -151,50 +229,9 @@
                             <span class="stat-value">4+</span>
                             <span class="stat-label">Systems Built</span>
                         </div>
-                        <div class="project-stat-divider"></div>
-                        <div class="project-stat-item">
-                            <span class="stat-value">2024</span>
-                            <span class="stat-label">In Production</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Project 3: Business Websites -->
-                <div class="project-card reveal" style="--stagger-index:2">
-                    <div class="project-card-top">
-                        <div class="project-card-badge">
-                            <span class="badge-icon">✨</span>
-                            <span class="badge-text">Client Work</span>
-                        </div>
-                        <div class="project-card-icon">💼</div>
-                    </div>
-                    <h3>Business Website & Systems</h3>
-                    <span class="project-category">Web + Systems</span>
-                    <p>Custom websites and lightweight management systems delivered for small business clients — from landing pages to inventory tracking.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">React</span>
-                        <span class="project-tag">TypeScript</span>
-                        <span class="project-tag">Node.js</span>
-                        <span class="project-tag">Bootstrap</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="/portfolio/zema-supermarket" class="project-link">
-                            <span>View Projects</span>
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                        </a>
-                    </div>
-                    <div class="project-card-stats">
-                        <div class="project-stat-item">
-                            <span class="stat-value">8+</span>
-                            <span class="stat-label">Clients Served</span>
-                        </div>
-                        <div class="project-stat-divider"></div>
-                        <div class="project-stat-item">
-                            <span class="stat-value">2023-24</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -238,6 +275,26 @@
 
 </div>
 
+<style>
+    /* Adjusting grid layout for 4 items */
+    .projects-grid-2x2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-5);
+        margin-top: var(--space-6);
+    }
+
+        /* Make sure cards in the 2x2 grid stretch correctly */
+        .projects-grid-2x2 .project-card {
+            height: 100%;
+        }
+
+    @@media (max-width: 1024px) {
+        .projects-grid-2x2 {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
 
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
@@ -246,7 +303,7 @@
         {
             // Load the JS module from the wwwroot/js folder
             var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/portfolio.js");
-            
+
             // Run the initialization
             await module.InvokeVoidAsync("portfolioPageInit");
         }
