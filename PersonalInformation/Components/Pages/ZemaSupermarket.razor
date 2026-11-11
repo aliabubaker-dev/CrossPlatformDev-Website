@@ -1,5 +1,10 @@
 ﻿@page "/portfolio/zema-supermarket"
 @page "/zema-supermarket"
+@inject IJSRuntime JS
+
+<SeoHead Title="Zema Mexican Supermarket | Full-Stack E-Commerce Platform"
+         Description="A full-featured e-commerce platform for Zema Mexican Supermarket with online ordering, secure payments, location-based delivery, and a powerful admin dashboard."
+         Path="/portfolio/zema-supermarket" />
 
 <div class="page-enter">
 
@@ -10,30 +15,31 @@
                 <div class="zema-hero-content">
                     <div class="zema-badge reveal" style="--stagger-index:0">
                         <span class="badge-dot"></span>
-                        <span>Client Project</span>
+                        <span>Client Project · Full-Stack E-Commerce</span>
                     </div>
                     <h1 class="zema-headline reveal" style="--stagger-index:1">
                         <span class="zema-line">Zema Mexican</span>
                         <span class="zema-line zema-line-gradient">Supermarket</span>
                     </h1>
                     <p class="zema-description reveal" style="--stagger-index:2">
-                        A full-featured e-commerce platform for Zema Mexican Supermarket with online ordering,
-                        secure payments, location-based delivery, and a powerful admin dashboard.
+                        A comprehensive, production-ready e-commerce platform built for a real supermarket.
+                        Featuring secure online payments, intelligent location-based delivery validation,
+                        dynamic product management, and a robust administrative control panel.
                     </p>
                     <div class="zema-stats reveal" style="--stagger-index:3">
                         <div class="zema-stat">
                             <span class="zema-stat-number">200+</span>
-                            <span class="zema-stat-label">Products</span>
+                            <span class="zema-stat-label">Products Managed</span>
                         </div>
                         <div class="zema-stat-divider"></div>
                         <div class="zema-stat">
                             <span class="zema-stat-number">100%</span>
-                            <span class="zema-stat-label">Online Payments</span>
+                            <span class="zema-stat-label">Secure Payments</span>
                         </div>
                         <div class="zema-stat-divider"></div>
                         <div class="zema-stat">
-                            <span class="zema-stat-number">Years</span>
-                            <span class="zema-stat-label">Running Smoothly</span>
+                            <span class="zema-stat-number">Real</span>
+                            <span class="zema-stat-label">Client Project</span>
                         </div>
                     </div>
                 </div>
@@ -66,8 +72,8 @@
             <div class="overview-grid">
                 <div class="overview-card reveal" style="--stagger-index:0">
                     <div class="overview-icon">🌮</div>
-                    <h4>Zema Mexican Supermarket</h4>
-                    <p>A complete online grocery store built for a Mexican supermarket in Hamilton, ON. Customers can browse, order, and pay online with location-based delivery restrictions.</p>
+                    <h4>The Client</h4>
+                    <p>A complete online grocery store built for Zema Mexican Supermarket in Hamilton, ON. Customers can browse, order, and pay online with location-based delivery restrictions to ensure fresh and timely delivery.</p>
                 </div>
                 <div class="overview-card reveal" style="--stagger-index:1">
                     <div class="overview-icon">⚙️</div>
@@ -85,13 +91,13 @@
                 </div>
                 <div class="overview-card reveal" style="--stagger-index:2">
                     <div class="overview-icon">📊</div>
-                    <h4>Key Metrics</h4>
+                    <h4>Core Features</h4>
                     <ul class="metrics-list">
-                        <li>✅ 200+ products</li>
-                        <li>✅ Secure payments</li>
-                        <li>✅ Location-based delivery</li>
-                        <li>✅ User accounts</li>
-                        <li>✅ Admin dashboard</li>
+                        <li>✅ 200+ Products & Inventory</li>
+                        <li>✅ Stripe Payment Gateway</li>
+                        <li>✅ Location-Based Delivery</li>
+                        <li>✅ User Authentication & Profiles</li>
+                        <li>✅ Admin Dashboard & Analytics</li>
                     </ul>
                 </div>
             </div>
@@ -236,28 +242,131 @@
             <div class="section-header reveal text-center">
                 <span class="eyebrow" style="justify-content: center;">screenshots</span>
                 <h2>Platform <span class="grad-text">Preview</span></h2>
+                <p class="gallery-subtitle">Click on any image to view it in full size and read more about the feature.</p>
             </div>
 
             <div class="gallery-grid">
-                <div class="gallery-placeholder reveal" style="--stagger-index:0">
-                    <div class="placeholder-icon">🛒</div>
-                    <span>Product Catalog</span>
+                <!-- Home Page -->
+                <div class="gallery-item reveal" style="--stagger-index:0" @onclick="() => OpenLightbox(0)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/mexican-home-page.png" alt="Zema Mexican Supermarket Home Page" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">🏠</span>
+                        <span class="gallery-label">Home Page</span>
+                    </div>
                 </div>
-                <div class="gallery-placeholder reveal" style="--stagger-index:1">
-                    <div class="placeholder-icon">💳</div>
-                    <span>Checkout & Payments</span>
+
+                <!-- Product Catalog -->
+                <div class="gallery-item reveal" style="--stagger-index:1" @onclick="() => OpenLightbox(1)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/mexican-products-page.png" alt="Product Catalog Page" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">🛒</span>
+                        <span class="gallery-label">Product Catalog</span>
+                    </div>
                 </div>
-                <div class="gallery-placeholder reveal" style="--stagger-index:2">
-                    <div class="placeholder-icon">📍</div>
-                    <span>Location Verification</span>
+
+                <!-- Admin Dashboard -->
+                <div class="gallery-item reveal" style="--stagger-index:2" @onclick="() => OpenLightbox(2)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/admin-dashboard-summary.png" alt="Admin Dashboard Summary" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">📊</span>
+                        <span class="gallery-label">Admin Dashboard</span>
+                    </div>
                 </div>
-                <div class="gallery-placeholder reveal" style="--stagger-index:3">
-                    <div class="placeholder-icon">📊</div>
-                    <span>Admin Dashboard</span>
+
+                <!-- Admin Panel - Products -->
+                <div class="gallery-item reveal" style="--stagger-index:3" @onclick="() => OpenLightbox(3)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/mexican-admin-panel.png" alt="Admin Product Management Panel" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">📦</span>
+                        <span class="gallery-label">Manage Products</span>
+                    </div>
+                </div>
+
+                <!-- Checkout / Payment -->
+                <div class="gallery-item reveal" style="--stagger-index:4" @onclick="() => OpenLightbox(4)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/paymnet-process.png" alt="Checkout and Payment Process" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">💳</span>
+                        <span class="gallery-label">Checkout & Payment</span>
+                    </div>
+                </div>
+
+                <!-- Shopping Cart -->
+                <div class="gallery-item reveal" style="--stagger-index:5" @onclick="() => OpenLightbox(5)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/shopping-cart-ffor-purches.png" alt="Shopping Cart Page" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">🛍️</span>
+                        <span class="gallery-label">Shopping Cart</span>
+                    </div>
+                </div>
+
+                <!-- User Profile -->
+                <div class="gallery-item reveal" style="--stagger-index:6" @onclick="() => OpenLightbox(6)">
+                    <div class="gallery-image-wrapper">
+                        <img src="/img/user-profile-editing.png" alt="User Profile Management" loading="lazy" />
+                        <div class="gallery-zoom-icon">🔍</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <span class="gallery-icon">👤</span>
+                        <span class="gallery-label">User Profile</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- ===== LIGHTBOX MODAL ===== -->
+    @if (selectedImage != null)
+    {
+        <div class="lightbox-overlay" @onclick="CloseLightbox">
+            <div class="lightbox-content" @onclick:stopPropagation="true">
+                <button class="lightbox-close" @onclick="CloseLightbox" aria-label="Close">
+                    ✕
+                </button>
+
+                <div class="lightbox-body">
+                    <div class="lightbox-image-container">
+                        <img src="@selectedImage.ImageUrl" alt="@selectedImage.Title" />
+                    </div>
+                    <div class="lightbox-info">
+                        <div class="lightbox-header">
+                            <span class="lightbox-icon">@selectedImage.Icon</span>
+                            <h3>@selectedImage.Title</h3>
+                        </div>
+                        <p class="lightbox-desc">@selectedImage.Description</p>
+
+                        <div class="lightbox-nav">
+                            <button class="btn btn-ghost" @onclick="PrevImage" disabled="@(selectedIndex == 0)">
+                                ← Previous
+                            </button>
+                            <span class="lightbox-counter">@(selectedIndex + 1) / @galleryImages.Count</span>
+                            <button class="btn btn-ghost" @onclick="NextImage" disabled="@(selectedIndex == galleryImages.Count - 1)">
+                                Next →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 
     <!-- ===== CTA ===== -->
     <section class="section-tight">
@@ -684,42 +793,229 @@
         padding: var(--space-8) 0;
     }
 
+    .gallery-subtitle {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin-top: var(--space-2);
+    }
+
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-4);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: var(--space-5);
         margin-top: var(--space-6);
     }
 
-    .gallery-placeholder {
+    .gallery-item {
         background: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-lg);
-        padding: var(--space-5);
-        text-align: center;
+        overflow: hidden;
+        transition: transform 0.4s var(--ease-out-expo), border-color 0.4s, box-shadow 0.4s;
+        cursor: pointer;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 150px;
-        transition: transform 0.3s var(--ease-out-expo), border-color 0.3s;
-        cursor: default;
+        position: relative;
     }
 
-        .gallery-placeholder:hover {
-            transform: translateY(-4px);
+        .gallery-item:hover {
+            transform: translateY(-8px) scale(1.02);
             border-color: var(--border-glow);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
-    .placeholder-icon {
-        font-size: 3rem;
-        margin-bottom: var(--space-2);
+    .gallery-image-wrapper {
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: var(--bg-elevated);
+        position: relative;
+        border-bottom: 1px solid var(--border-subtle);
     }
 
-    .gallery-placeholder span {
-        font-size: 0.85rem;
-        color: var(--text-secondary);
+        .gallery-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s var(--ease-out-expo);
+        }
+
+    .gallery-item:hover .gallery-image-wrapper img {
+        transform: scale(1.05);
+    }
+
+    .gallery-zoom-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        background: rgba(0, 0, 0, 0.6);
+        color: white;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 1.5rem;
+        opacity: 0;
+        transition: all 0.3s var(--ease-out-expo);
+        pointer-events: none;
+    }
+
+    .gallery-item:hover .gallery-zoom-icon {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .gallery-caption {
+        padding: var(--space-4);
+        display: flex;
+        align-items: center;
+        gap: var(--space-2);
+        background: var(--bg-surface);
+        transition: background 0.3s;
+    }
+
+    .gallery-item:hover .gallery-caption {
+        background: var(--bg-elevated);
+    }
+
+    .gallery-icon {
+        font-size: 1.2rem;
+    }
+
+    .gallery-label {
         font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-primary);
+        font-weight: 500;
+    }
+
+    /* ===== LIGHTBOX MODAL ===== */
+    .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 8, 16, 0.85);
+        backdrop-filter: blur(8px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: var(--space-4);
+        animation: fadeIn 0.3s var(--ease-out-expo);
+    }
+
+    .lightbox-content {
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-lg);
+        width: 100%;
+        max-width: 1100px;
+        max-height: 90vh;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        animation: fadeInUp 0.4s var(--ease-out-expo);
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: var(--space-4);
+        right: var(--space-4);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid var(--border-subtle);
+        color: var(--text-primary);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.2s;
+    }
+
+        .lightbox-close:hover {
+            background: rgba(255, 59, 48, 0.8);
+            color: white;
+            border-color: transparent;
+            transform: rotate(90deg);
+        }
+
+    .lightbox-body {
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .lightbox-image-container {
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+        .lightbox-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-height: 85vh;
+        }
+
+    .lightbox-info {
+        padding: var(--space-6);
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-surface);
+        border-left: 1px solid var(--border-subtle);
+    }
+
+    .lightbox-header {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        margin-bottom: var(--space-4);
+    }
+
+    .lightbox-icon {
+        font-size: 2rem;
+    }
+
+    .lightbox-header h3 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        color: var(--text-primary);
+    }
+
+    .lightbox-desc {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        line-height: 1.7;
+        flex: 1;
+    }
+
+    .lightbox-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: var(--space-6);
+        padding-top: var(--space-4);
+        border-top: 1px solid var(--border-subtle);
+    }
+
+    .lightbox-counter {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-muted);
     }
 
     /* ===== RESPONSIVE ===== */
@@ -760,7 +1056,23 @@
         }
 
         .gallery-grid {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .lightbox-body {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto 1fr;
+        }
+
+        .lightbox-image-container {
+            height: 50vh;
+        }
+
+        .lightbox-info {
+            border-left: none;
+            border-top: 1px solid var(--border-subtle);
+            max-height: 40vh;
+            overflow-y: auto;
         }
     }
 
@@ -790,6 +1102,10 @@
             grid-template-columns: 1fr;
         }
 
+        .gallery-image-wrapper {
+            height: 180px;
+        }
+
         .zema-icon-circle {
             width: 120px;
             height: 120px;
@@ -813,6 +1129,18 @@
             width: 250px;
             height: 250px;
         }
+
+        .lightbox-info {
+            padding: var(--space-4);
+        }
+
+        .lightbox-header h3 {
+            font-size: 1.1rem;
+        }
+
+        .lightbox-desc {
+            font-size: 0.9rem;
+        }
     }
 
     @@media (max-width: 480px) {
@@ -832,5 +1160,106 @@
 </style>
 
 @code {
-    // No JavaScript needed
+    private List<GalleryImage> galleryImages = new()
+    {
+        new GalleryImage
+        {
+            ImageUrl = "/img/mexican-home-page.png",
+            Title = "Home Page",
+            Icon = "🏠",
+            Description = "The welcoming landing page for Zema Mexican Supermarket. It features a clean, professional layout with a prominent hero section, easy navigation, search functionality, and quick access to key categories like 'About Us', 'Products', and 'Contact Us'."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/mexican-products-page.png",
+            Title = "Product Catalog",
+            Icon = "🛒",
+            Description = "A robust product browsing experience. Users can filter by categories (e.g., Baking/Spices, Drinks, Snacks), sort items, and view detailed product cards with images, pricing, and stock availability. Includes 'Quick View' and 'Add to Cart' actions for a smooth shopping flow."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/admin-dashboard-summary.png",
+            Title = "Admin Dashboard",
+            Icon = "📊",
+            Description = "The central command center for store administrators. It provides a quick overview of Total Orders, Total Revenue, Product Count, and Customer Count. The lower section includes a visual Revenue Overview chart, low stock alerts, and a recent orders summary to keep the business running smoothly."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/mexican-admin-panel.png",
+            Title = "Manage Products",
+            Icon = "📦",
+            Description = "A powerful inventory management interface. Admins can view all products in a structured table, check their current stock levels, toggle their active status, and mark items as 'Best Sellers'. Quick action buttons allow for editing, hiding, or deleting products instantly."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/paymnet-process.png",
+            Title = "Checkout & Payment",
+            Icon = "💳",
+            Description = "A seamless, step-by-step checkout flow. Customers fill in their shipping information and verify their location (restricted to the Greater Toronto Area). The system then securely processes payments via Stripe, providing a clear order summary with subtotal, tax, and delivery fees before final confirmation."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/shopping-cart-ffor-purches.png",
+            Title = "Shopping Cart",
+            Icon = "🛍️",
+            Description = "An intuitive cart management page. Users can review their selected items, adjust quantities, and see real-time updates on the total price (including tax and delivery fees). A clear 'Proceed to Checkout' button ensures a frictionless path to purchase."
+        },
+        new GalleryImage
+        {
+            ImageUrl = "/img/user-profile-editing.png",
+            Title = "User Profile",
+            Icon = "👤",
+            Description = "A comprehensive account management area for customers. Users can update their personal information, view their order history, manage saved delivery addresses, and access quick actions like 'Shop Now' or 'Change Password', all within a clean, user-friendly dashboard."
+        }
+    };
+
+    private GalleryImage? selectedImage;
+    private int selectedIndex = -1;
+
+    private void OpenLightbox(int index)
+    {
+        selectedIndex = index;
+        selectedImage = galleryImages[index];
+    }
+
+    private void CloseLightbox()
+    {
+        selectedImage = null;
+        selectedIndex = -1;
+    }
+
+    private void PrevImage()
+    {
+        if (selectedIndex > 0)
+        {
+            selectedIndex--;
+            selectedImage = galleryImages[selectedIndex];
+        }
+    }
+
+    private void NextImage()
+    {
+        if (selectedIndex < galleryImages.Count - 1)
+        {
+            selectedIndex++;
+            selectedImage = galleryImages[selectedIndex];
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Trigger the site-wide animations (scroll reveal etc.)
+            await JS.InvokeVoidAsync("siteAnimations.initAll");
+        }
+    }
+
+    public class GalleryImage
+    {
+        public string ImageUrl { get; set; } = string.Empty;
+        public string Title { get; set; } = string.Empty;
+        public string Icon { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+    }
 }

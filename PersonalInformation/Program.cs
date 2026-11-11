@@ -30,6 +30,9 @@ builder.Services.AddScoped<ThemeService>();
 builder.Services.AddSingleton<BlogService>();
 builder.Configuration.AddUserSecrets<Program>();
 
+// Lets the contact form read the visitor's IP address for rate limiting
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.AddHttpClient("Resend", client =>
 {
     client.BaseAddress = new Uri("https://api.resend.com/");
@@ -41,6 +44,32 @@ builder.Services.AddHttpClient("Groq", client =>
     client.Timeout = TimeSpan.FromSeconds(20);
 });
 var app = builder.Build();
+
+// Security headers. This runs first so every response gets them,
+// including the WebOptimizer bundles and static files.
+app.Use(async (ctx, next) =>
+{
+    var h = ctx.Response.Headers;
+    h["X-Content-Type-Options"] = "nosniff";
+    h["X-Frame-Options"] = "DENY";
+    h["Referrer-Policy"] = "strict-origin-when-cross-origin";
+    h["Permissions-Policy"] = "camera=(), microphone=(), geolocation=()";
+
+    // CSP is skipped while developing because it blocks Visual Studio's Browser Link and Hot Reload.
+    if (!app.Environment.IsDevelopment())
+    {
+        h["Content-Security-Policy"] =
+            "default-src 'self'; " +
+            "script-src 'self' 'unsafe-inline'; " +
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+            "font-src https://fonts.gstatic.com; " +
+            "img-src 'self' data: https:; " +
+            "connect-src 'self' wss: https:; " +
+            "frame-ancestors 'none'; base-uri 'self'; form-action 'self'";
+    }
+
+    await next();
+});
 
 // Use WebOptimizer middleware
 app.UseWebOptimizer();
@@ -57,7 +86,7 @@ app.UseForwardedHeaders(forwardedHeaderOptions);
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    app.UseHsts();
+    app.UseHsts();   // already here, so I did not add a second one
 }
 app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
 app.UseHttpsRedirection();
