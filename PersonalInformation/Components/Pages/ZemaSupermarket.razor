@@ -43,17 +43,38 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- ===== REDESIGNED HERO VISUAL ===== -->
                 <div class="zema-hero-visual reveal" style="--stagger-index:2">
                     <div class="zema-orb"></div>
-                    <div class="zema-icon-display">
-                        <div class="zema-icon-circle">
-                            <span class="zema-icon-large">🛒</span>
+
+                    <div class="orbit-system">
+                        <!-- Outer Ring -->
+                        <div class="orbit-ring outer">
+                            <span class="orbit-icon" style="--angle: 0deg;">🍎</span>
+                            <span class="orbit-icon" style="--angle: 45deg;">🥑</span>
+                            <span class="orbit-icon" style="--angle: 90deg;">💳</span>
+                            <span class="orbit-icon" style="--angle: 135deg;">🥩</span>
+                            <span class="orbit-icon" style="--angle: 180deg;">📍</span>
+                            <span class="orbit-icon" style="--angle: 225deg;">🧀</span>
+                            <span class="orbit-icon" style="--angle: 270deg;">📦</span>
+                            <span class="orbit-icon" style="--angle: 315deg;">🥫</span>
                         </div>
-                        <div class="zema-icon-ring">
-                            <span class="zema-ring-icon" style="top: -10%; left: 50%;">📍</span>
-                            <span class="zema-ring-icon" style="bottom: -10%; left: 30%;">💳</span>
-                            <span class="zema-ring-icon" style="bottom: -10%; right: 30%;">👤</span>
-                            <span class="zema-ring-icon" style="top: -10%; right: 10%;">📦</span>
+
+                        <!-- Inner Ring -->
+                        <div class="orbit-ring inner">
+                            <span class="orbit-icon" style="--angle: 22deg;">🍌</span>
+                            <span class="orbit-icon" style="--angle: 82deg;">🥦</span>
+                            <span class="orbit-icon" style="--angle: 142deg;">🥛</span>
+                            <span class="orbit-icon" style="--angle: 202deg;">🌽</span>
+                            <span class="orbit-icon" style="--angle: 262deg;">🍞</span>
+                            <span class="orbit-icon" style="--angle: 322deg;">🍅</span>
+                        </div>
+
+                        <!-- Center Hub -->
+                        <div class="orbit-center">
+                            <span class="center-icon">🛒</span>
+                            <div class="center-glow"></div>
                         </div>
                     </div>
                 </div>
@@ -386,6 +407,7 @@
     /* ===== ZEMA HERO ===== */
     .zema-hero {
         padding-top: var(--space-4);
+        overflow: hidden; /* Prevent orbit icons from causing scrollbars */
     }
 
     .zema-hero-grid {
@@ -477,79 +499,127 @@
         background: var(--border-subtle);
     }
 
-    /* ===== ZEMA VISUAL ===== */
+    /* ===== ZEMA HERO VISUAL (ORBIT SYSTEM) ===== */
     .zema-hero-visual {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 300px;
+        min-height: 450px; /* Increased to fit orbits */
     }
 
     .zema-orb {
         position: absolute;
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle at center, rgba(0, 229, 255, 0.06), transparent 70%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle at center, rgba(0, 229, 255, 0.08), transparent 70%);
         border-radius: 50%;
         pointer-events: none;
-        animation: floatY 8s ease-in-out infinite;
+        animation: floatY 10s ease-in-out infinite;
     }
 
-    .zema-icon-display {
+    .orbit-system {
         position: relative;
-        z-index: 1;
-    }
-
-    .zema-icon-circle {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: var(--bg-surface);
-        border: 2px solid var(--border-subtle);
+        width: 300px;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.4s var(--ease-out-expo);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
 
-        .zema-icon-circle:hover {
-            transform: scale(1.05);
-            border-color: var(--border-glow);
-        }
-
-    .zema-icon-large {
-        font-size: 4rem;
-    }
-
-    .zema-icon-ring {
+    .orbit-ring {
         position: absolute;
-        inset: -60px;
-        pointer-events: none;
+        border-radius: 50%;
+        border: 1px dashed rgba(0, 229, 255, 0.2);
+        animation: rotateOrbit linear infinite;
     }
 
-    .zema-ring-icon {
+        .orbit-ring.outer {
+            width: 300px;
+            height: 300px;
+            animation-duration: 40s;
+        }
+
+        .orbit-ring.inner {
+            width: 200px;
+            height: 200px;
+            animation-duration: 25s;
+            animation-direction: reverse;
+            border-color: rgba(61, 127, 255, 0.2);
+        }
+
+    @@keyframes rotateOrbit {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Position icons on the rings */
+    .orbit-icon {
         position: absolute;
-        font-size: 1.8rem;
-        animation: floatY 4s ease-in-out infinite;
+        top: 50%;
+        left: 50%;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        /* Calculate position based on custom property --angle */
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-150px) rotate(calc(-1 * var(--angle)));
+        transition: all 0.3s;
     }
 
-        .zema-ring-icon:nth-child(1) {
-            animation-delay: 0s;
-        }
+    .orbit-ring.inner .orbit-icon {
+        font-size: 1.2rem;
+        width: 34px;
+        height: 34px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-100px) rotate(calc(-1 * var(--angle)));
+    }
 
-        .zema-ring-icon:nth-child(2) {
-            animation-delay: 0.5s;
-        }
+    /* Hover effect for individual icons */
+    .orbit-icon:hover {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        z-index: 10;
+    }
 
-        .zema-ring-icon:nth-child(3) {
-            animation-delay: 1s;
-        }
+    /* Center Hub */
+    .orbit-center {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: var(--bg-surface);
+        border: 2px solid var(--border-glow);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        box-shadow: 0 0 30px rgba(0, 229, 255, 0.15);
+    }
 
-        .zema-ring-icon:nth-child(4) {
-            animation-delay: 1.5s;
-        }
+    .center-icon {
+        font-size: 3rem;
+        filter: drop-shadow(0 0 10px rgba(0,229,255,0.5));
+    }
+
+    .center-glow {
+        position: absolute;
+        inset: -20px;
+        background: radial-gradient(circle, rgba(0,229,255,0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: -1;
+        animation: pulseGlow 3s ease-in-out infinite;
+    }
 
     /* ===== OVERVIEW ===== */
     .zema-overview {
@@ -1032,6 +1102,7 @@
 
         .zema-hero-visual {
             order: 0;
+            min-height: 400px;
         }
 
         .zema-headline {
@@ -1106,15 +1177,6 @@
             height: 180px;
         }
 
-        .zema-icon-circle {
-            width: 120px;
-            height: 120px;
-        }
-
-        .zema-icon-large {
-            font-size: 3rem;
-        }
-
         .status-banner {
             flex-direction: column;
             text-align: center;
@@ -1126,8 +1188,12 @@
         }
 
         .zema-orb {
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
+        }
+
+        .orbit-system {
+            transform: scale(0.8); /* Scale down orbit on smaller screens */
         }
 
         .lightbox-info {
@@ -1153,8 +1219,8 @@
             grid-template-columns: 1fr;
         }
 
-        .zema-icon-ring {
-            display: none;
+        .orbit-system {
+            transform: scale(0.65); /* Scale down further on mobile */
         }
     }
 </style>
