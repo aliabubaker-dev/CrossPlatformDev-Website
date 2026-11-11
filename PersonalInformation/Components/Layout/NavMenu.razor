@@ -13,6 +13,10 @@
         <nav id="primary-nav" class="hdr-nav @(_open ? "open" : "")" aria-label="Primary">
             <NavLink href="/" Match="NavLinkMatch.All" @onclick="Close">Home</NavLink>
             <NavLink href="/services" @onclick="Close">Services</NavLink>
+
+            <!-- NEW PRICING LINK -->
+            <NavLink href="/services/website-development" @onclick="Close" class="hdr-pricing-link">Pricing</NavLink>
+
             <NavLink href="/portfolio" @onclick="Close">Portfolio</NavLink>
             <NavLink href="/about" @onclick="Close">About</NavLink>
             <NavLink href="/blog" @onclick="Close">Blog</NavLink>

@@ -298,3 +298,18 @@
         animation: none !important;
     }
 }
+/* Highlight the pricing link slightly so it stands out */
+.hdr-nav ::deep a.hdr-pricing-link {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+    .hdr-nav ::deep a.hdr-pricing-link::after {
+        transform: scaleX(1); /* Always show underline */
+        background: var(--accent-cyan);
+        opacity: 0.5;
+    }
+
+    .hdr-nav ::deep a.hdr-pricing-link:hover::after {
+        opacity: 1;
+    }

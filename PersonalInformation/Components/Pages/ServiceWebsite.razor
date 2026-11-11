@@ -1,37 +1,69 @@
 ﻿@page "/services/website-development"
 @page "/services#websites"
+@inject IJSRuntime JS
+
+<SeoHead Title="Website Development in Hamilton & Canada | Custom Web Design"
+         Description="Looking for a website creator in Hamilton or across Canada? I build fast, modern, and custom websites for local businesses. From $100 landing pages to $4500 custom e-commerce stores. Get a free quote today."
+         Path="/services/website-development" />
 
 <div class="page-enter">
-    <!-- Hero Section -->
+
+    <!-- ===== HERO SECTION ===== -->
     <section class="service-hero section">
         <div class="container">
             <div class="service-hero-grid">
-                <div class="service-hero-content reveal" style="--stagger-index:0">
-                    <span class="eyebrow">service</span>
-                    <h1 class="service-headline">
+                <div class="service-hero-content">
+                    <div class="service-badge reveal" style="--stagger-index:0">
+                        <span class="badge-dot"></span>
+                        <span>Hamilton & Canada Web Developer</span>
+                    </div>
+                    <h1 class="service-headline reveal" style="--stagger-index:1">
                         <span class="service-line">Website</span>
                         <span class="service-line service-line-gradient">Development</span>
                     </h1>
-                    <p class="service-description">
-                        Professional, fast, and mobile-responsive websites that help your business get found online.
-                        From landing pages to full e-commerce stores — I build websites that actually work.
+                    <p class="service-description reveal" style="--stagger-index:2">
+                        Stop losing customers to competitors with outdated websites.
+                        I build high-performance, custom websites for local businesses in Hamilton, Toronto, and across Canada.
+                        Get found on Google, look professional, and grow your business.
                     </p>
-                    <div class="service-actions">
-                        <a href="/contact" class="btn btn-primary">Start Your Website</a>
-                        <a href="/portfolio" class="btn btn-ghost">See Examples</a>
+                    <div class="service-actions reveal" style="--stagger-index:3">
+                        <a href="/contact" class="btn btn-primary btn-3d">Start Your Website</a>
+                        <a href="/portfolio" class="btn btn-ghost">See My Work</a>
                     </div>
                 </div>
-                <div class="service-hero-visual reveal" style="--stagger-index:1">
+
+                <!-- ===== NEW 3D ORBIT VISUAL ===== -->
+                <div class="service-hero-visual reveal" style="--stagger-index:2">
                     <div class="service-orb"></div>
-                    <div class="service-icon-display">
-                        <div class="service-icon-circle floaty">
-                            <span class="service-icon-large">🌐</span>
+
+                    <div class="orbit-system">
+                        <!-- Outer Ring -->
+                        <div class="orbit-ring outer">
+                            <span class="orbit-icon" style="--angle: 0deg;">⚡</span>
+                            <span class="orbit-icon" style="--angle: 45deg;">📱</span>
+                            <span class="orbit-icon" style="--angle: 90deg;">🔍</span>
+                            <span class="orbit-icon" style="--angle: 135deg;">🎨</span>
+                            <span class="orbit-icon" style="--angle: 180deg;">💻</span>
+                            <span class="orbit-icon" style="--angle: 225deg;">🛒</span>
+                            <span class="orbit-icon" style="--angle: 270deg;">⚙️</span>
+                            <span class="orbit-icon" style="--angle: 315deg;">🌐</span>
                         </div>
-                        <div class="service-icon-ring">
-                            <span class="ring-icon" style="top: -10%; left: 50%;">⚡</span>
-                            <span class="ring-icon" style="bottom: -10%; left: 30%;">📱</span>
-                            <span class="ring-icon" style="bottom: -10%; right: 30%;">🔍</span>
-                            <span class="ring-icon" style="top: -10%; right: 10%;">🎨</span>
+
+                        <!-- Inner Ring -->
+                        <div class="orbit-ring inner">
+                            <span class="orbit-icon" style="--angle: 22deg;">📊</span>
+                            <span class="orbit-icon" style="--angle: 82deg;">🔒</span>
+                            <span class="orbit-icon" style="--angle: 142deg;">📝</span>
+                            <span class="orbit-icon" style="--angle: 202deg;">📈</span>
+                            <span class="orbit-icon" style="--angle: 262deg;">🔗</span>
+                            <span class="orbit-icon" style="--angle: 322deg;">📦</span>
+                        </div>
+
+                        <!-- Center Hub -->
+                        <div class="orbit-center">
+                            <span class="center-icon">🌐</span>
+                            <div class="center-glow"></div>
+                            <div class="radar-sweep"></div>
                         </div>
                     </div>
                 </div>
@@ -39,150 +71,208 @@
         </div>
     </section>
 
-    <!-- Overview -->
+    <!-- ===== 3D OVERVIEW CARDS ===== -->
     <section class="section-tight">
         <div class="container">
             <div class="section-header reveal text-center">
-                <span class="eyebrow" style="justify-content: center;">overview</span>
-                <h2>What I <span class="grad-text">Build</span></h2>
+                <span class="eyebrow" style="justify-content: center;">what-i-build</span>
+                <h2>Solutions for <span class="grad-text">Local Businesses</span></h2>
+                <p class="section-subtitle">Whether you need a simple presence or a complex platform, I build it right.</p>
             </div>
 
-            <div class="overview-grid">
-                <div class="overview-card reveal" style="--stagger-index:0">
-                    <div class="overview-icon">🏢</div>
+            <div class="overview-grid-3d">
+                <div class="overview-card-3d reveal" style="--stagger-index:0">
+                    <div class="card-icon-3d">🏢</div>
                     <h4>Business Websites</h4>
-                    <p>Professional company websites, portfolios, and landing pages that establish your online presence.</p>
+                    <p>Professional company websites, portfolios, and landing pages that establish your online presence and build trust with Canadian customers.</p>
                 </div>
-                <div class="overview-card reveal" style="--stagger-index:1">
-                    <div class="overview-icon">🛒</div>
+                <div class="overview-card-3d reveal" style="--stagger-index:1">
+                    <div class="card-icon-3d">🛒</div>
                     <h4>E-Commerce Stores</h4>
-                    <p>Full online stores with product management, shopping carts, and secure payment processing.</p>
+                    <p>Full online stores with product management, secure payment processing (Stripe), and automated shipping calculations.</p>
                 </div>
-                <div class="overview-card reveal" style="--stagger-index:2">
-                    <div class="overview-icon">📝</div>
-                    <h4>Blogs & Content</h4>
-                    <p>Content management systems that make it easy for you to update your website yourself.</p>
+                <div class="overview-card-3d reveal" style="--stagger-index:2">
+                    <div class="card-icon-3d">🚀</div>
+                    <h4>Custom Web Apps</h4>
+                    <p>Interactive web applications with user accounts, custom dashboards, and real-time data features to streamline your business.</p>
                 </div>
-                <div class="overview-card reveal" style="--stagger-index:3">
-                    <div class="overview-icon">⚡</div>
-                    <h4>Web Apps</h4>
-                    <p>Interactive web applications with user accounts, dashboards, and real-time features.</p>
+                <div class="overview-card-3d reveal" style="--stagger-index:3">
+                    <div class="card-icon-3d">📈</div>
+                    <h4>SEO & Performance</h4>
+                    <p>Lightning-fast load times and Google-optimized code so your business shows up first when locals search for your services.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tech Stack -->
+    <!-- ===== TECH STACK (GLASS CARDS) ===== -->
     <section class="section-tight tech-section">
         <div class="container">
             <div class="section-header reveal text-center">
                 <span class="eyebrow" style="justify-content: center;">tech-stack</span>
-                <h2>What I <span class="grad-text">Use</span></h2>
+                <h2>Built with <span class="grad-text">Modern Tech</span></h2>
             </div>
 
-            <div class="tech-grid">
-                <div class="tech-item reveal" style="--stagger-index:0">
-                    <span class="tech-icon-large">🚀</span>
-                    <span class="tech-name">React</span>
-                    <span class="tech-desc">Modern UI components</span>
+            <div class="tech-grid-glass">
+                <div class="tech-item-glass reveal" style="--stagger-index:0">
+                    <span class="tech-icon">🚀</span>
+                    <span class="tech-name">React / Next.js</span>
                 </div>
-                <div class="tech-item reveal" style="--stagger-index:1">
-                    <span class="tech-icon-large">📘</span>
+                <div class="tech-item-glass reveal" style="--stagger-index:1">
+                    <span class="tech-icon">📘</span>
                     <span class="tech-name">TypeScript</span>
-                    <span class="tech-desc">Type-safe JavaScript</span>
                 </div>
-                <div class="tech-item reveal" style="--stagger-index:2">
-                    <span class="tech-icon-large">🎨</span>
-                    <span class="tech-name">Bootstrap</span>
-                    <span class="tech-desc">Responsive design</span>
+                <div class="tech-item-glass reveal" style="--stagger-index:2">
+                    <span class="tech-icon">🎨</span>
+                    <span class="tech-name">Tailwind CSS</span>
                 </div>
-                <div class="tech-item reveal" style="--stagger-index:3">
-                    <span class="tech-icon-large">⚡</span>
+                <div class="tech-item-glass reveal" style="--stagger-index:3">
+                    <span class="tech-icon">⚡</span>
                     <span class="tech-name">.NET Core</span>
-                    <span class="tech-desc">Backend & APIs</span>
                 </div>
-                <div class="tech-item reveal" style="--stagger-index:4">
-                    <span class="tech-icon-large">🗄️</span>
+                <div class="tech-item-glass reveal" style="--stagger-index:4">
+                    <span class="tech-icon">🗄️</span>
                     <span class="tech-name">SQL Server</span>
-                    <span class="tech-desc">Database management</span>
                 </div>
-                <div class="tech-item reveal" style="--stagger-index:5">
-                    <span class="tech-icon-large">☁️</span>
-                    <span class="tech-name">Azure</span>
-                    <span class="tech-desc">Cloud hosting</span>
+                <div class="tech-item-glass reveal" style="--stagger-index:5">
+                    <span class="tech-icon">☁️</span>
+                    <span class="tech-name">Azure Cloud</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Pricing -->
+    <!-- ===== UPDATED PRICING (COMPETITIVE CAD) ===== -->
     <section class="section-tight">
         <div class="container">
             <div class="section-header reveal text-center">
                 <span class="eyebrow" style="justify-content: center;">pricing</span>
-                <h2>Investment <span class="grad-text">Guide</span></h2>
+                <h2>Transparent <span class="grad-text">Pricing (CAD)</span></h2>
+                <p class="section-subtitle">No hidden fees. Competitive rates for the Canadian market.</p>
             </div>
 
-            <div class="pricing-grid">
-                <div class="pricing-card reveal" style="--stagger-index:0">
-                    <div class="pricing-icon">📄</div>
-                    <h4>Landing Page</h4>
-                    <div class="pricing-price">$1,500 - $2,500</div>
+            <div class="pricing-grid-3d">
+                <!-- Tier 1 -->
+                <div class="pricing-card-3d reveal" style="--stagger-index:0">
+                    <div class="pricing-header">
+                        <div class="pricing-icon-3d">📄</div>
+                        <h4>Landing Page</h4>
+                        <div class="pricing-price">$100 - $600</div>
+                        <p class="pricing-desc">Perfect for a single service, event, or quick launch.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li>✓ Single page with sections</li>
-                        <li>✓ Mobile responsive</li>
-                        <li>✓ SEO optimized</li>
-                        <li>✓ Contact form integration</li>
-                        <li>✓ 1-2 weeks delivery</li>
+                        <li><span>✓</span> Single Page Design</li>
+                        <li><span>✓</span> Mobile Responsive</li>
+                        <li><span>✓</span> Contact Form Integration</li>
+                        <li><span>✓</span> Basic SEO Setup</li>
+                        <li><span>✓</span> 1-2 Weeks Delivery</li>
                     </ul>
+                    <a href="/contact" class="btn btn-outline w-100">Get Started</a>
                 </div>
-                <div class="pricing-card featured reveal" style="--stagger-index:1">
+
+                <!-- Tier 2 (Featured) -->
+                <div class="pricing-card-3d featured reveal" style="--stagger-index:1">
                     <div class="pricing-badge">Most Popular</div>
-                    <div class="pricing-icon">🏢</div>
-                    <h4>Business Website</h4>
-                    <div class="pricing-price">$2,500 - $5,000</div>
+                    <div class="pricing-header">
+                        <div class="pricing-icon-3d">🏢</div>
+                        <h4>Business Website</h4>
+                        <div class="pricing-price">$1,000 - $2,500</div>
+                        <p class="pricing-desc">Complete online presence to dominate your local market.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li>✓ 5-10 pages</li>
-                        <li>✓ Mobile responsive</li>
-                        <li>✓ SEO optimized</li>
-                        <li>✓ CMS integration</li>
-                        <li>✓ Contact forms</li>
-                        <li>✓ 2-4 weeks delivery</li>
+                        <li><span>✓</span> Up to 10 Pages</li>
+                        <li><span>✓</span> Custom UI/UX Design</li>
+                        <li><span>✓</span> Advanced SEO (Google Maps)</li>
+                        <li><span>✓</span> Easy Content Management (CMS)</li>
+                        <li><span>✓</span> 2-4 Weeks Delivery</li>
                     </ul>
+                    <a href="/contact" class="btn btn-primary w-100">Start Your Project</a>
                 </div>
-                <div class="pricing-card reveal" style="--stagger-index:2">
-                    <div class="pricing-icon">🛒</div>
-                    <h4>E-Commerce</h4>
-                    <div class="pricing-price">$4,000 - $8,000</div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card-3d reveal" style="--stagger-index:2">
+                    <div class="pricing-header">
+                        <div class="pricing-icon-3d">🛒</div>
+                        <h4>E-Commerce</h4>
+                        <div class="pricing-price">$2,000 - $4,500</div>
+                        <p class="pricing-desc">Sell your products online seamlessly and securely.</p>
+                    </div>
                     <ul class="pricing-features">
-                        <li>✓ Product catalog</li>
-                        <li>✓ Shopping cart</li>
-                        <li>✓ Payment integration</li>
-                        <li>✓ Admin dashboard</li>
-                        <li>✓ 4-6 weeks delivery</li>
+                        <li><span>✓</span> Product Catalog</li>
+                        <li><span>✓</span> Stripe/PayPal Integration</li>
+                        <li><span>✓</span> Shopping Cart & Checkout</li>
+                        <li><span>✓</span> Admin Dashboard</li>
+                        <li><span>✓</span> 4-6 Weeks Delivery</li>
                     </ul>
+                    <a href="/contact" class="btn btn-outline w-100">Get Started</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
+    <!-- ===== LOCAL SEO SECTION ===== -->
+    <section class="section-tight local-seo-section">
+        <div class="container">
+            <div class="local-seo-grid">
+                <div class="local-seo-content reveal">
+                    <span class="eyebrow">local-expertise</span>
+                    <h2>Why Choose a <span class="grad-text">Local Developer?</span></h2>
+                    <p>Working with a developer in your timezone (EST) means faster communication, better understanding of the local market, and no language barriers.</p>
+                    <ul class="local-features">
+                        <li><span class="check-icon">✓</span> <strong>Hamilton & GTA Focused:</strong> I understand the local competition and what Canadian customers expect.</li>
+                        <li><span class="check-icon">✓</span> <strong>Google Maps Optimization:</strong> Get set up to appear in the local Google "Map Pack" when people search near you.</li>
+                        <li><span class="check-icon">✓</span> <strong>Canadian Hosting Options:</strong> Ensure your data stays in Canada for compliance and speed.</li>
+                    </ul>
+                </div>
+                <div class="local-seo-visual reveal" style="--stagger-index:1">
+                    <div class="glass-panel">
+                        <div class="panel-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                            <span class="panel-title">Google Search Results</span>
+                        </div>
+                        <div class="search-result">
+                            <h5>Top Web Developer in Hamilton | CrossPlatform Dev</h5>
+                            <p>Looking for a website creator in Hamilton? I build fast, custom websites for local businesses...</p>
+                            <div class="search-meta">⭐ 5.0 · Hamilton, ON</div>
+                        </div>
+                        <div class="search-result faded">
+                            <h5>Other Web Agency</h5>
+                            <p>We build generic websites using WordPress templates...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
     <section class="section-tight">
         <div class="container">
             <div class="reveal cta-banner">
                 <span class="eyebrow" style="justify-content: center;">ready-to-start</span>
-                <h2 style="font-size: 2rem;">Ready for a <span class="grad-text">new website?</span></h2>
-                <p style="max-width: 500px; margin: 0 auto var(--space-5);">Let's build a website that represents your business perfectly.</p>
-                <a href="/contact" class="btn btn-primary">Get a Free Quote</a>
+                <h2 style="font-size: 2.5rem;">Let's Build Something <span class="grad-text">Great.</span></h2>
+                <p style="max-width: 500px; margin: 0 auto var(--space-5);">Ready to stand out online? Get a free, no-obligation quote for your project today.</p>
+                <a href="/contact" class="btn btn-primary btn-3d">Get Your Free Quote</a>
             </div>
         </div>
     </section>
 </div>
 
 <style>
-    /* ===== Service Hero ===== */
+    /* ===== UTILS & BASE ===== */
+    .section-subtitle {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 1rem auto 0;
+    }
+
+    /* ===== HERO SECTION ===== */
     .service-hero {
-        padding-top: var(--space-4);
+        padding-top: var(--space-6);
+        overflow: hidden;
     }
 
     .service-hero-grid {
@@ -190,13 +280,28 @@
         grid-template-columns: 1.1fr 1fr;
         gap: var(--space-8);
         align-items: center;
-        min-height: 50vh;
+        min-height: 60vh;
     }
 
     .service-hero-content {
         display: flex;
         flex-direction: column;
         gap: var(--space-4);
+    }
+
+    .service-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--space-3);
+        background: rgba(0, 229, 255, 0.08);
+        border: 1px solid rgba(0, 229, 255, 0.15);
+        border-radius: 999px;
+        padding: 6px 16px 6px 10px;
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: var(--accent-cyan);
+        width: fit-content;
+        font-family: var(--font-mono);
     }
 
     .service-headline {
@@ -219,7 +324,7 @@
 
     .service-description {
         font-size: 1.1rem;
-        max-width: 480px;
+        max-width: 500px;
         color: var(--text-secondary);
         line-height: 1.7;
         margin: 0;
@@ -229,290 +334,537 @@
         display: flex;
         gap: var(--space-4);
         flex-wrap: wrap;
+        margin-top: var(--space-2);
     }
 
+    /* ===== 3D HERO ORBIT VISUAL ===== */
     .service-hero-visual {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
-        min-height: 300px;
+        min-height: 450px;
     }
 
     .service-orb {
         position: absolute;
-        width: 350px;
-        height: 350px;
-        background: radial-gradient(circle at center, rgba(0, 229, 255, 0.06), transparent 70%);
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle at center, rgba(0, 229, 255, 0.08), transparent 70%);
         border-radius: 50%;
         pointer-events: none;
         animation: floatY 8s ease-in-out infinite;
     }
 
-    .service-icon-display {
+    .orbit-system {
         position: relative;
-        z-index: 1;
-    }
-
-    .service-icon-circle {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: var(--bg-surface);
-        border: 2px solid var(--border-subtle);
+        width: 300px;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: transform 0.4s var(--ease-out-expo);
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
     }
 
-        .service-icon-circle:hover {
-            transform: scale(1.05);
-            border-color: var(--border-glow);
-        }
-
-    .service-icon-large {
-        font-size: 4rem;
-    }
-
-    .service-icon-ring {
+    .orbit-ring {
         position: absolute;
-        inset: -60px;
-        pointer-events: none;
+        border-radius: 50%;
+        border: 1px dashed rgba(0, 229, 255, 0.25);
+        animation: rotateOrbit linear infinite;
     }
 
-    .ring-icon {
+        .orbit-ring.outer {
+            width: 320px;
+            height: 320px;
+            animation-duration: 40s;
+        }
+
+        .orbit-ring.inner {
+            width: 210px;
+            height: 210px;
+            animation-duration: 25s;
+            animation-direction: reverse;
+            border-color: rgba(61, 127, 255, 0.25);
+        }
+
+    @@keyframes rotateOrbit {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .orbit-icon {
         position: absolute;
-        font-size: 1.8rem;
-        animation: floatY 4s ease-in-out infinite;
+        top: 50%;
+        left: 50%;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: 50%;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-160px) rotate(calc(-1 * var(--angle)));
+        transition: all 0.3s;
     }
 
-        .ring-icon:nth-child(1) {
-            animation-delay: 0s;
+    .orbit-ring.inner .orbit-icon {
+        font-size: 1.2rem;
+        width: 36px;
+        height: 36px;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-105px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .orbit-icon:hover {
+        border-color: var(--accent-cyan);
+        box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+        z-index: 10;
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-160px) rotate(calc(-1 * var(--angle))) scale(1.2);
+    }
+
+    .orbit-ring.inner .orbit-icon:hover {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(-105px) rotate(calc(-1 * var(--angle))) scale(1.2);
+    }
+
+    .orbit-center {
+        position: relative;
+        width: 110px;
+        height: 110px;
+        background: var(--bg-surface);
+        border: 2px solid rgba(0, 229, 255, 0.5);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 5;
+        box-shadow: 0 0 40px rgba(0, 229, 255, 0.15);
+        overflow: hidden;
+    }
+
+    .center-icon {
+        font-size: 3rem;
+        filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.5));
+        z-index: 2;
+    }
+
+    .center-glow {
+        position: absolute;
+        inset: -20px;
+        background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, transparent 70%);
+        border-radius: 50%;
+        z-index: 1;
+        animation: pulseGlow 3s ease-in-out infinite;
+    }
+
+    .radar-sweep {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(0, 229, 255, 0.4) 360deg);
+        border-radius: 50%;
+        animation: radarSpin 4s linear infinite;
+        z-index: 0;
+    }
+
+    @@keyframes radarSpin {
+        from {
+            transform: rotate(0deg);
         }
 
-        .ring-icon:nth-child(2) {
-            animation-delay: 0.5s;
+        to {
+            transform: rotate(360deg);
         }
+    }
 
-        .ring-icon:nth-child(3) {
-            animation-delay: 1s;
-        }
-
-        .ring-icon:nth-child(4) {
-            animation-delay: 1.5s;
-        }
-
-    /* ===== Overview ===== */
-    .overview-grid {
+    /* ===== 3D OVERVIEW CARDS ===== */
+    .overview-grid-3d {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: var(--space-4);
+        gap: var(--space-5);
         margin-top: var(--space-6);
+        perspective: 1000px;
     }
 
-    .overview-card {
+    .overview-card-3d {
         background: var(--bg-surface);
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-lg);
-        padding: var(--space-5);
+        padding: var(--space-6) var(--space-5);
         text-align: center;
-        transition: transform 0.3s var(--ease-out-expo), border-color 0.3s;
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s, box-shadow 0.4s;
+        transform-style: preserve-3d;
     }
 
-        .overview-card:hover {
-            transform: translateY(-6px);
+        .overview-card-3d:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
             border-color: var(--border-glow);
+            box-shadow: -10px 15px 40px rgba(0, 229, 255, 0.1);
         }
 
-    .overview-icon {
-        font-size: 2.5rem;
-        margin-bottom: var(--space-2);
+    .card-icon-3d {
+        font-size: 3rem;
+        display: block;
+        margin-bottom: var(--space-3);
+        filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+        transform: translateZ(20px);
     }
 
-    .overview-card h4 {
-        font-size: 1rem;
-        margin: 0 0 var(--space-1);
+    .overview-card-3d h4 {
+        font-size: 1.1rem;
+        margin: 0 0 var(--space-2);
+        font-family: var(--font-display);
+        font-weight: 600;
     }
 
-    .overview-card p {
+    .overview-card-3d p {
         font-size: 0.9rem;
-        color: var(--text-muted);
+        color: var(--text-secondary);
         margin: 0;
+        line-height: 1.6;
     }
 
-    /* ===== Tech ===== */
+    /* ===== GLASS TECH STACK ===== */
     .tech-section {
         background: rgba(0, 0, 0, 0.2);
         border-top: 1px solid var(--border-subtle);
         border-bottom: 1px solid var(--border-subtle);
     }
 
-    .tech-grid {
+    .tech-grid-glass {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: var(--space-4);
         margin-top: var(--space-6);
     }
 
-    .tech-item {
-        background: var(--bg-surface);
-        border: 1px solid var(--border-subtle);
+    .tech-item-glass {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: var(--radius-md);
-        padding: var(--space-4);
+        padding: var(--space-5);
         text-align: center;
-        transition: transform 0.3s var(--ease-out-expo), border-color 0.3s;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
     }
 
-        .tech-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--accent-cyan);
+        .tech-item-glass::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.05), transparent);
+            transform: skewX(-20deg);
+            transition: all 0.5s ease;
         }
 
-    .tech-icon-large {
+        .tech-item-glass:hover::before {
+            left: 150%;
+        }
+
+        .tech-item-glass:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-cyan);
+            background: rgba(0, 229, 255, 0.05);
+        }
+
+    .tech-icon {
         font-size: 2rem;
         display: block;
-        margin-bottom: var(--space-1);
+        margin-bottom: var(--space-2);
     }
 
     .tech-name {
-        display: block;
         font-weight: 600;
         color: var(--text-primary);
+        font-size: 0.95rem;
     }
 
-    .tech-desc {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-    }
-
-    /* ===== Pricing ===== */
-    .pricing-grid {
+    /* ===== 3D PRICING CARDS ===== */
+    .pricing-grid-3d {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: var(--space-5);
+        gap: var(--space-6);
         margin-top: var(--space-6);
+        align-items: center;
     }
 
-    .pricing-card {
-        background: var(--bg-surface);
+    .pricing-card-3d {
+        background: linear-gradient(145deg, var(--bg-surface), var(--bg-elevated));
         border: 1px solid var(--border-subtle);
         border-radius: var(--radius-lg);
         padding: var(--space-6);
         text-align: center;
-        transition: transform 0.3s var(--ease-out-expo), border-color 0.3s;
+        transition: all 0.4s ease;
         position: relative;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
-        .pricing-card:hover {
-            transform: translateY(-6px);
+        .pricing-card-3d:hover {
+            transform: translateY(-8px);
             border-color: var(--border-glow);
+            box-shadow: 0 20px 50px rgba(0, 229, 255, 0.1);
         }
 
-        .pricing-card.featured {
+        .pricing-card-3d.featured {
             border-color: var(--accent-cyan);
-            box-shadow: 0 0 40px rgba(0, 229, 255, 0.05);
+            transform: scale(1.05);
+            z-index: 2;
+            box-shadow: 0 0 50px rgba(0, 229, 255, 0.15);
         }
+
+            .pricing-card-3d.featured:hover {
+                transform: scale(1.05) translateY(-8px);
+            }
 
     .pricing-badge {
         position: absolute;
-        top: -12px;
+        top: 0;
         left: 50%;
-        transform: translateX(-50%);
+        transform: translate(-50%, -50%);
         background: var(--accent-gradient);
         color: #04121a;
-        font-size: 0.7rem;
-        font-weight: 700;
-        padding: 4px 16px;
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 6px 20px;
         border-radius: 999px;
-        font-family: var(--font-mono);
         text-transform: uppercase;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
     }
 
-    .pricing-icon {
+    .pricing-icon-3d {
         font-size: 2.5rem;
+        margin-bottom: var(--space-2);
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
     }
 
-    .pricing-card h4 {
-        font-size: 1.2rem;
-        margin: var(--space-2) 0 var(--space-1);
+    .pricing-header h4 {
+        font-size: 1.3rem;
+        margin: 0 0 var(--space-1);
     }
 
     .pricing-price {
         font-family: var(--font-display);
-        font-size: 1.8rem;
-        font-weight: 700;
+        font-size: 2rem;
+        font-weight: 800;
         color: var(--accent-cyan);
+        margin-bottom: var(--space-2);
+        text-shadow: 0 2px 10px rgba(0,229,255,0.3);
+    }
+
+    .pricing-desc {
+        font-size: 0.85rem;
+        color: var(--text-muted);
         margin-bottom: var(--space-4);
+        min-height: 40px;
     }
 
     .pricing-features {
         list-style: none;
         padding: 0;
-        margin: 0;
+        margin: 0 0 var(--space-5);
         text-align: left;
     }
 
         .pricing-features li {
-            padding: var(--space-1) 0;
+            padding: var(--space-2) 0;
             color: var(--text-secondary);
             font-size: 0.9rem;
             border-bottom: 1px solid var(--border-subtle);
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
             .pricing-features li:last-child {
                 border-bottom: none;
             }
 
-    /* ===== Responsive ===== */
+            .pricing-features li span {
+                color: var(--success);
+                font-weight: bold;
+            }
+
+    /* ===== LOCAL SEO SECTION ===== */
+    .local-seo-section {
+        background: rgba(0, 0, 0, 0.15);
+        border-top: 1px solid var(--border-subtle);
+        border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .local-seo-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-8);
+        align-items: center;
+    }
+
+    .local-seo-content h2 {
+        font-size: 2rem;
+        margin-bottom: var(--space-3);
+    }
+
+    .local-seo-content p {
+        color: var(--text-secondary);
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: var(--space-5);
+    }
+
+    .local-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .local-features li {
+            display: flex;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+    .check-icon {
+        color: var(--success);
+        font-weight: 900;
+        font-size: 1.1rem;
+    }
+
+    .glass-panel {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-lg);
+        padding: var(--space-4);
+        box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    }
+
+    .panel-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: var(--space-4);
+        padding-bottom: var(--space-3);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+        .dot.red {
+            background: #FF5F57;
+        }
+
+        .dot.yellow {
+            background: #FEBC2E;
+        }
+
+        .dot.green {
+            background: #28C840;
+        }
+
+    .panel-title {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-left: auto;
+    }
+
+    .search-result {
+        background: rgba(0,0,0,0.2);
+        padding: var(--space-3);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--space-2);
+        border-left: 3px solid var(--accent-cyan);
+    }
+
+        .search-result.faded {
+            opacity: 0.5;
+            border-left-color: var(--text-muted);
+        }
+
+        .search-result h5 {
+            font-size: 1rem;
+            color: #8ab4f8;
+            margin: 0 0 4px;
+            text-decoration: underline;
+        }
+
+        .search-result p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0 0 4px;
+            line-height: 1.4;
+        }
+
+    .search-meta {
+        font-size: 0.75rem;
+        color: var(--success);
+    }
+
+    /* ===== RESPONSIVE ===== */
     @@media (max-width: 1024px) {
-        .service-hero-grid {
+        .service-hero-grid,
+        .local-seo-grid {
             grid-template-columns: 1fr;
             min-height: auto;
             gap: var(--space-6);
         }
 
-        .service-hero-content {
-            order: 1;
-        }
-
         .service-hero-visual {
-            order: 0;
+            order: -1;
+            min-height: 350px;
         }
 
         .service-headline {
             font-size: clamp(2rem, 4vw, 2.8rem);
         }
 
-        .service-description {
-            font-size: 1rem;
-            max-width: 100%;
-        }
-
-        .overview-grid {
+        .overview-grid-3d {
             grid-template-columns: 1fr 1fr;
         }
 
-        .tech-grid {
+        .tech-grid-glass {
             grid-template-columns: 1fr 1fr;
         }
 
-        .pricing-grid {
+        .pricing-grid-3d {
             grid-template-columns: 1fr;
-            max-width: 500px;
+            max-width: 400px;
             margin-left: auto;
             margin-right: auto;
         }
+
+        .pricing-card-3d.featured {
+            transform: scale(1);
+        }
+
+            .pricing-card-3d.featured:hover {
+                transform: translateY(-8px);
+            }
     }
 
     @@media (max-width: 600px) {
-        .overview-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .tech-grid {
+        .overview-grid-3d,
+        .tech-grid-glass {
             grid-template-columns: 1fr;
         }
 
@@ -526,21 +878,37 @@
                 justify-content: center;
             }
 
-        .service-icon-circle {
-            width: 120px;
-            height: 120px;
-        }
-
-        .service-icon-large {
-            font-size: 3rem;
-        }
-
-        .service-icon-ring {
-            display: none;
-        }
-
-        .pricing-price {
-            font-size: 1.4rem;
+        .service-hero-visual {
+            transform: scale(0.8);
+            margin: -40px 0;
         }
     }
+
+    /* ===== BUTTON 3D EFFECT ===== */
+    .btn-3d {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+        .btn-3d:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 229, 255, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-3d:active {
+            transform: translateY(1px);
+            box-shadow: 0 5px 10px rgba(0, 229, 255, 0.2);
+        }
 </style>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            // Trigger the site-wide animations (scroll reveal etc.)
+            await JS.InvokeVoidAsync("siteAnimations.initAll");
+        }
+    }
+}
