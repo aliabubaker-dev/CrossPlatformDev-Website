@@ -1,0 +1,462 @@
+﻿@page "/portfolio/csharp-mastery-hub"
+@inject IJSRuntime JS
+
+<SeoHead Title="C# Mastery Hub | ASP.NET Core Razor Pages Case Study"
+         Description="A complete free C# learning platform with 19 topics, 120+ lessons, code challenges, discussion forums, and interactive quizzes — built on ASP.NET Core Razor Pages."
+         Path="/portfolio/csharp-mastery-hub" />
+
+<div class="page-enter csharp-hub-page">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="cs-hero">
+        <div class="cs-hero-bg" aria-hidden="true">
+            <span class="cs-hero-glow cs-hero-glow-a"></span>
+            <span class="cs-hero-glow cs-hero-glow-b"></span>
+            <span class="cs-hero-grid"></span>
+            <span class="cs-hero-orb cs-hero-orb-1"></span>
+            <span class="cs-hero-orb cs-hero-orb-2"></span>
+            <span class="cs-hero-orb cs-hero-orb-3"></span>
+        </div>
+
+        <div class="container cs-hero-inner">
+            <div class="cs-hero-copy">
+                <div class="hero-badge reveal" style="--stagger-index:0">
+                    <span class="badge-dot"></span>
+                    <span>Live Project · ASP.NET Core</span>
+                </div>
+
+                <h1 class="portfolio-headline reveal" style="--stagger-index:1">
+                    <span class="portfolio-line">C# Mastery</span>
+                    <span class="portfolio-line portfolio-line-gradient">Hub</span>
+                </h1>
+
+                <p class="portfolio-description reveal" style="--stagger-index:2">
+                    A complete, free C# learning platform — 19 topics, 120+ lessons, code challenges, discussion forums, and interactive quizzes. Built on ASP.NET Core Razor Pages with a clean service-layer architecture and deployed live on Render.
+                </p>
+
+                <div class="cs-hero-actions reveal" style="--stagger-index:3">
+                    <a href="https://csharpmasteryhub.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-arrow">
+                        Visit Live Site
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                    </a>
+                    <a href="/portfolio" class="btn btn-secondary">← Back to Portfolio</a>
+                </div>
+
+                <div class="portfolio-stats reveal" style="--stagger-index:4">
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">19</span>
+                        <span class="portfolio-stat-label">Topics</span>
+                    </div>
+                    <div class="portfolio-stat-divider"></div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">120+</span>
+                        <span class="portfolio-stat-label">Lessons</span>
+                    </div>
+                    <div class="portfolio-stat-divider"></div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">100%</span>
+                        <span class="portfolio-stat-label">Free</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cs-hero-visual reveal" style="--stagger-index:2">
+                <div class="cs-hero-frame">
+                    <div class="cs-hero-frame-inner">
+                        <img src="/img/cs_home.png" alt="C# Mastery Hub homepage" loading="eager" />
+                        <span class="cs-hero-shine"></span>
+                    </div>
+                    <span class="cs-hero-frame-glow"></span>
+                </div>
+
+                <div class="cs-hero-chip cs-hero-chip-1 floaty">
+                    <span class="cs-chip-dot"></span>
+                    <span>Live on Render</span>
+                </div>
+
+                <div class="cs-hero-chip cs-hero-chip-2 floaty">
+                    <span class="cs-chip-icon">⚡</span>
+                    <span>ASP.NET Core</span>
+                </div>
+
+                <div class="cs-hero-chip cs-hero-chip-3 floaty">
+                    <span class="cs-chip-icon">✦</span>
+                    <span>Razor Pages</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         QUICK FACTS
+         ============================================================ -->
+    <section class="cs-facts">
+        <div class="container">
+            <div class="cs-facts-grid">
+                <div class="cs-fact reveal" style="--stagger-index:0">
+                    <span class="cs-fact-icon">◆</span>
+                    <span class="cs-fact-label">Framework</span>
+                    <span class="cs-fact-value">ASP.NET Core Razor Pages</span>
+                </div>
+                <div class="cs-fact reveal" style="--stagger-index:1">
+                    <span class="cs-fact-icon">◆</span>
+                    <span class="cs-fact-label">Type</span>
+                    <span class="cs-fact-value">Education platform</span>
+                </div>
+                <div class="cs-fact reveal" style="--stagger-index:2">
+                    <span class="cs-fact-icon">◆</span>
+                    <span class="cs-fact-label">Scope</span>
+                    <span class="cs-fact-value">Architecture · Build · Content</span>
+                </div>
+                <div class="cs-fact reveal" style="--stagger-index:3">
+                    <span class="cs-fact-icon">◆</span>
+                    <span class="cs-fact-label">Status</span>
+                    <span class="cs-fact-value cs-fact-live"><span class="cs-fact-live-dot"></span> Live</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MARQUEE STRIP
+         ============================================================ -->
+    <section class="cs-marquee" aria-hidden="true">
+        <div class="cs-marquee-track">
+            <span>C#</span><span class="cs-marquee-dot">•</span>
+            <span>ASP.NET Core</span><span class="cs-marquee-dot">•</span>
+            <span>Razor Pages</span><span class="cs-marquee-dot">•</span>
+            <span>Dependency Injection</span><span class="cs-marquee-dot">•</span>
+            <span>Service Layer</span><span class="cs-marquee-dot">•</span>
+            <span>Bootstrap 5</span><span class="cs-marquee-dot">•</span>
+            <span>SEO</span><span class="cs-marquee-dot">•</span>
+            <span>Render</span><span class="cs-marquee-dot">•</span>
+            <span>HSTS</span><span class="cs-marquee-dot">•</span>
+            <span>C#</span><span class="cs-marquee-dot">•</span>
+            <span>ASP.NET Core</span><span class="cs-marquee-dot">•</span>
+            <span>Razor Pages</span><span class="cs-marquee-dot">•</span>
+            <span>Dependency Injection</span><span class="cs-marquee-dot">•</span>
+            <span>Service Layer</span><span class="cs-marquee-dot">•</span>
+            <span>Bootstrap 5</span><span class="cs-marquee-dot">•</span>
+            <span>SEO</span><span class="cs-marquee-dot">•</span>
+            <span>Render</span><span class="cs-marquee-dot">•</span>
+            <span>HSTS</span><span class="cs-marquee-dot">•</span>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         OVERVIEW
+         ============================================================ -->
+    <section class="section-tight cs-overview">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">overview</span>
+                <h2>What is <br><span class="grad-text">C# Mastery Hub?</span></h2>
+                <p class="cs-section-lead">
+                    A structured, free learning platform that takes beginners from installing Visual Studio all the way to building full-stack ASP.NET Core apps, deploying to Azure and AWS, and using DevOps practices — all in plain English, with no registration required.
+                </p>
+            </div>
+
+            <div class="cs-overview-grid">
+                <div class="cs-overview-card reveal" style="--stagger-index:0">
+                    <span class="cs-overview-kicker">01 — Mission</span>
+                    <h3>Free, complete C# education</h3>
+                    <p>Quality programming education should be accessible to everyone. This site delivers a full beginner-to-professional curriculum with no paywalls, no ads, and no login wall.</p>
+                    <span class="cs-overview-arrow">↗</span>
+                </div>
+                <div class="cs-overview-card reveal" style="--stagger-index:1">
+                    <span class="cs-overview-kicker">02 — Architecture</span>
+                    <h3>Razor Pages + service layer</h3>
+                    <p>Each feature (SEO, quizzes, code challenges, discussions) is backed by a dedicated service registered in DI. Pages stay thin; logic lives in <code>Services/</code> and models in <code>Models/</code>.</p>
+                    <span class="cs-overview-arrow">↗</span>
+                </div>
+                <div class="cs-overview-card reveal" style="--stagger-index:2">
+                    <span class="cs-overview-kicker">03 — Experience</span>
+                    <h3>Beginner → Master, in one path</h3>
+                    <p>Three levels — Beginner, Intermediate, Advanced — guide learners through 19 topics, with per-lesson quizzes, interactive code challenges, and a discussion forum for each topic.</p>
+                    <span class="cs-overview-arrow">↗</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+         ============================================================ -->
+    <section class="section-tight cs-gallery">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">screenshots</span>
+                <h2>A look at the <br><span class="grad-text">learning platform.</span></h2>
+                <p class="cs-section-lead">Six key views — homepage, learning path, code challenges, discussion forum, contact, and about.</p>
+            </div>
+
+            <div class="cs-gallery-grid">
+                <figure class="cs-gallery-item cs-gallery-item-wide reveal" style="--stagger-index:0">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_home.png" alt="C# Mastery Hub homepage" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">01</span>
+                        <div>
+                            <p class="cs-gallery-title">Homepage — Hero &amp; Learning Path</p>
+                            <p class="cs-gallery-desc">Full curriculum map with beginner, intermediate, and advanced levels.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="cs-gallery-item reveal" style="--stagger-index:1">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_home_advanced_section.png" alt="Advanced learning path section" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">02</span>
+                        <div>
+                            <p class="cs-gallery-title">Advanced Topics Section</p>
+                            <p class="cs-gallery-desc">DevOps, AWS, SEO, security, and full-project walkthroughs.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="cs-gallery-item reveal" style="--stagger-index:2">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_challanges.png" alt="Code challenges page" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">03</span>
+                        <div>
+                            <p class="cs-gallery-title">Code Challenges</p>
+                            <p class="cs-gallery-desc">Difficulty-filtered challenges with starter code and solutions.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="cs-gallery-item reveal" style="--stagger-index:3">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_disscution.png" alt="Discussion forum" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">04</span>
+                        <div>
+                            <p class="cs-gallery-title">Discussion Forum</p>
+                            <p class="cs-gallery-desc">Threaded replies, pinned topics, and view counters per discussion.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="cs-gallery-item reveal" style="--stagger-index:4">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_about.png" alt="About page" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">05</span>
+                        <div>
+                            <p class="cs-gallery-title">About Page</p>
+                            <p class="cs-gallery-desc">Creator spotlight, tech stack, and mission statement.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="cs-gallery-item reveal" style="--stagger-index:5">
+                    <div class="cs-gallery-frame">
+                        <img src="/img/cs_contact.png" alt="Contact page" loading="lazy" />
+                        <span class="cs-gallery-shine"></span>
+                    </div>
+                    <figcaption>
+                        <span class="cs-gallery-index">06</span>
+                        <div>
+                            <p class="cs-gallery-title">Contact Page</p>
+                            <p class="cs-gallery-desc">Clean contact form with validation and success state.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BUILD STORY
+         ============================================================ -->
+    <section class="section-tight cs-story">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">build-story</span>
+                <h2>How it was <br><span class="grad-text">built.</span></h2>
+            </div>
+
+            <ol class="cs-timeline">
+                <li class="cs-timeline-item reveal" style="--stagger-index:0">
+                    <span class="cs-timeline-dot"></span>
+                    <div class="cs-timeline-body">
+                        <span class="cs-timeline-step">Phase 01</span>
+                        <h3>Curriculum architecture</h3>
+                        <p>Mapped out 19 topics across three levels — Beginner, Intermediate, Advanced — and designed a consistent page template with breadcrumbs, sidebar navigation, lesson badges, and previous/next links.</p>
+                    </div>
+                </li>
+                <li class="cs-timeline-item reveal" style="--stagger-index:1">
+                    <span class="cs-timeline-dot"></span>
+                    <div class="cs-timeline-body">
+                        <span class="cs-timeline-step">Phase 02</span>
+                        <h3>Service-layer backend</h3>
+                        <p>Registered <code>SeoService</code>, <code>QuizService</code>, <code>ChallengeService</code>, and <code>DiscussionService</code> in DI. Each Razor Page depends only on its service — page models stay thin and testable.</p>
+                    </div>
+                </li>
+                <li class="cs-timeline-item reveal" style="--stagger-index:2">
+                    <span class="cs-timeline-dot"></span>
+                    <div class="cs-timeline-body">
+                        <span class="cs-timeline-step">Phase 03</span>
+                        <h3>Interactive learning</h3>
+                        <p>Built quizzes with graded results, code challenges with starter code and solutions, and a threaded discussion forum — each tied to its lesson via shared topic IDs.</p>
+                    </div>
+                </li>
+                <li class="cs-timeline-item reveal" style="--stagger-index:3">
+                    <span class="cs-timeline-dot"></span>
+                    <div class="cs-timeline-body">
+                        <span class="cs-timeline-step">Phase 04</span>
+                        <h3>SEO &amp; deployment</h3>
+                        <p>Integrated <code>SeoService</code> for per-page meta tags and OpenGraph data, added security headers and HSTS, then deployed to Render with HTTPS enforced in production.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES
+         ============================================================ -->
+    <section class="section-tight cs-features">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">features</span>
+                <h2>What makes this <br><span class="grad-text">platform stand out.</span></h2>
+            </div>
+
+            <div class="cs-features-grid">
+                <div class="cs-feature reveal" style="--stagger-index:0">
+                    <div class="cs-feature-icon">📚</div>
+                    <h3>19-topic curriculum</h3>
+                    <p>From "Getting Started" to DevOps, AWS, and a full WinForms project walkthrough — every topic has a dedicated lesson set, breadcrumb, and prev/next navigation.</p>
+                    <span class="cs-feature-tag">Structured</span>
+                </div>
+                <div class="cs-feature reveal" style="--stagger-index:1">
+                    <div class="cs-feature-icon">🧠</div>
+                    <h3>Interactive quizzes</h3>
+                    <p>Each lesson has a companion quiz backed by <code>QuizService</code>. Results are graded, explained, and shown with per-answer feedback.</p>
+                    <span class="cs-feature-tag">Assessment</span>
+                </div>
+                <div class="cs-feature reveal" style="--stagger-index:2">
+                    <div class="cs-feature-icon">⚙️</div>
+                    <h3>Code challenges</h3>
+                    <p>Difficulty-filtered challenges with starter code, a reference solution, and a written explanation — backed by <code>ChallengeService</code> and modeled in <code>CodeChallenge</code>.</p>
+                    <span class="cs-feature-tag">Practice</span>
+                </div>
+                <div class="cs-feature reveal" style="--stagger-index:3">
+                    <div class="cs-feature-icon">💬</div>
+                    <h3>Discussion forum</h3>
+                    <p>Per-topic threads with replies, pinned posts, view counts, and author names — backed by <code>DiscussionService</code>. A real community layer, not just comments.</p>
+                    <span class="cs-feature-tag">Community</span>
+                </div>
+                <div class="cs-feature reveal" style="--stagger-index:4">
+                    <div class="cs-feature-icon">🔎</div>
+                    <h3>Central SEO service</h3>
+                    <p><code>SeoService</code> generates per-page titles, descriptions, canonical URLs, and OpenGraph metadata — so every lesson page is indexable and shareable.</p>
+                    <span class="cs-feature-tag">Discoverable</span>
+                </div>
+                <div class="cs-feature reveal" style="--stagger-index:5">
+                    <div class="cs-feature-icon">🛡️</div>
+                    <h3>Production hardening</h3>
+                    <p>HSTS, HTTPS redirect, exception handler, and user-secrets integration in development. Deployed to Render and live on the public internet.</p>
+                    <span class="cs-feature-tag">Production</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SPEC PANEL
+         ============================================================ -->
+    <section class="section-tight cs-spec">
+        <div class="container">
+            <div class="cs-spec-grid">
+                <div class="cs-spec-copy reveal" style="--stagger-index:0">
+                    <span class="eyebrow">tech-stack</span>
+                    <h2>Built with <br><span class="grad-text">the .NET stack.</span></h2>
+                    <p>A pure ASP.NET Core Razor Pages application — no frontend framework, no build step. Razor views, a service layer, and Bootstrap for a lightweight, fast, and maintainable learning platform.</p>
+                </div>
+
+                <div class="cs-spec-panel reveal" style="--stagger-index:1">
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Framework</span>
+                        <span class="cs-spec-value">ASP.NET Core · Razor Pages</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Language</span>
+                        <span class="cs-spec-value">C# · .NET</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Architecture</span>
+                        <span class="cs-spec-value">Service layer · DI</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">UI</span>
+                        <span class="cs-spec-value">Bootstrap 5 · AOS</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Icons</span>
+                        <span class="cs-spec-value">Font Awesome</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">SEO</span>
+                        <span class="cs-spec-value">SeoService · OG · canonical</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Hosting</span>
+                        <span class="cs-spec-value">Render · HSTS · HTTPS</span>
+                    </div>
+                    <div class="cs-spec-row">
+                        <span class="cs-spec-key">Status</span>
+                        <span class="cs-spec-value cs-spec-live"><span class="cs-spec-live-dot"></span> Live on Render</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section class="section-tight">
+        <div class="container">
+            <div class="reveal cs-cta">
+                <span class="eyebrow" style="justify-content: center;">live-site</span>
+                <h2>See it in <br><span class="grad-text">action.</span></h2>
+                <p>C# Mastery Hub is live on Render. Visit the real site to explore the full curriculum, take a quiz, or try a code challenge.</p>
+                <div class="cs-cta-actions">
+                    <a href="https://csharpmasteryhub.onrender.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-arrow">
+                        Visit csharpmasteryhub.onrender.com
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                    </a>
+                    <a href="/portfolio" class="btn btn-secondary">← Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/portfolio.js");
+            await module.InvokeVoidAsync("portfolioPageInit");
+        }
+    }
+}

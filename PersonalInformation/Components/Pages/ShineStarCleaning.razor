@@ -1,0 +1,408 @@
+﻿@page "/portfolio/shine-star-cleaning"
+@inject IJSRuntime JS
+
+<SeoHead Title="Shine Star Cleaning | Next.js Website Case Study"
+         Description="A premium, animation-rich Next.js marketing website for a family-run cleaning company in Hamilton, Ontario. Features scroll-driven storytelling, service cards with tilt, and a mobile-first layout."
+         Path="/portfolio/shine-star-cleaning" />
+
+<div class="page-enter shine-star-page">
+
+    <!-- ============================================================
+         HERO
+         ============================================================ -->
+    <section class="ss-hero">
+        <div class="ss-hero-bg" aria-hidden="true">
+            <span class="ss-hero-glow ss-hero-glow-a"></span>
+            <span class="ss-hero-glow ss-hero-glow-b"></span>
+            <span class="ss-hero-grid"></span>
+        </div>
+
+        <div class="container ss-hero-inner">
+            <div class="ss-hero-copy">
+                <div class="hero-badge reveal" style="--stagger-index:0">
+                    <span class="badge-dot"></span>
+                    <span>Live Client Project · Next.js</span>
+                </div>
+
+                <h1 class="portfolio-headline reveal" style="--stagger-index:1">
+                    <span class="portfolio-line">Shine Star</span>
+                    <span class="portfolio-line portfolio-line-gradient">Cleaning Co.</span>
+                </h1>
+
+                <p class="portfolio-description reveal" style="--stagger-index:2">
+                    A premium, animation-rich marketing website for a family-run cleaning company in Hamilton, Ontario. Built with Next.js 14, React 18, Tailwind CSS, and Framer Motion — now discoverable on Google and serving 18 cities across Southern Ontario.
+                </p>
+
+                <div class="ss-hero-actions reveal" style="--stagger-index:3">
+                    <a href="https://www.shinestarcleaning.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-arrow">
+                        Visit Live Site
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                    </a>
+                    <a href="/portfolio" class="btn btn-secondary">← Back to Portfolio</a>
+                </div>
+
+                <div class="portfolio-stats reveal" style="--stagger-index:4">
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">18</span>
+                        <span class="portfolio-stat-label">Cities</span>
+                    </div>
+                    <div class="portfolio-stat-divider"></div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">8</span>
+                        <span class="portfolio-stat-label">Services</span>
+                    </div>
+                    <div class="portfolio-stat-divider"></div>
+                    <div class="portfolio-stat">
+                        <span class="portfolio-stat-number">2026</span>
+                        <span class="portfolio-stat-label">Launched</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ss-hero-visual reveal" style="--stagger-index:2">
+                <div class="ss-hero-frame">
+                    <div class="ss-hero-frame-inner">
+                        <img src="/img/shine1.png" alt="Shine Star Cleaning homepage hero" loading="eager" />
+                    </div>
+                    <span class="ss-hero-frame-glow"></span>
+                </div>
+
+                <div class="ss-hero-chip ss-hero-chip-1 floaty">
+                    <span class="ss-chip-dot"></span>
+                    <span>Live on Google</span>
+                </div>
+
+                <div class="ss-hero-chip ss-hero-chip-2 floaty">
+                    <span class="ss-chip-icon">⚡</span>
+                    <span>Next.js 14</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         QUICK FACTS
+         ============================================================ -->
+    <section class="ss-facts">
+        <div class="container">
+            <div class="ss-facts-grid">
+                <div class="ss-fact reveal" style="--stagger-index:0">
+                    <span class="ss-fact-label">Stack</span>
+                    <span class="ss-fact-value">Next.js · React · Tailwind</span>
+                </div>
+                <div class="ss-fact reveal" style="--stagger-index:1">
+                    <span class="ss-fact-label">Type</span>
+                    <span class="ss-fact-value">Marketing site</span>
+                </div>
+                <div class="ss-fact reveal" style="--stagger-index:2">
+                    <span class="ss-fact-label">Scope</span>
+                    <span class="ss-fact-value">Design · Build · SEO</span>
+                </div>
+                <div class="ss-fact reveal" style="--stagger-index:3">
+                    <span class="ss-fact-label">Status</span>
+                    <span class="ss-fact-value ss-fact-live"><span class="ss-fact-live-dot"></span> Live</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         OVERVIEW
+         ============================================================ -->
+    <section class="section-tight ss-overview">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">overview</span>
+                <h2>What is <br><span class="grad-text">Shine Star Cleaning?</span></h2>
+                <p class="ss-section-lead">
+                    Shine Star Cleaning is a family-run cleaning business based in Hamilton, Ontario — serving homes, offices, restaurants, and post-construction sites across 18 cities in Southern Ontario. The website was designed to feel premium, calm, and trustworthy, mirroring the "spotless space" feeling the client delivers in every clean.
+                </p>
+            </div>
+
+            <div class="ss-overview-grid">
+                <div class="ss-overview-card reveal" style="--stagger-index:0">
+                    <span class="ss-overview-kicker">01 — Goal</span>
+                    <h3>Translate a feeling into a website</h3>
+                    <p>Capture the client's "walk into a fresh space" feeling. Drive quote requests and phone calls from local Google searches in Hamilton, Halton, and Niagara.</p>
+                </div>
+                <div class="ss-overview-card reveal" style="--stagger-index:1">
+                    <span class="ss-overview-kicker">02 — Design</span>
+                    <h3>Premium, calm, and trustworthy</h3>
+                    <p>A soft sky-blue brand palette, generous whitespace, rounded corners, and editorial-style typography create the same calm, reset feeling the client delivers after every clean.</p>
+                </div>
+                <div class="ss-overview-card reveal" style="--stagger-index:2">
+                    <span class="ss-overview-kicker">03 — Tech</span>
+                    <h3>Next.js 14 + Framer Motion</h3>
+                    <p>Built with the Next.js App Router, React 18, Tailwind CSS, and Framer Motion. Includes scroll-linked animations, magnetic buttons, tilt cards, and a scroll-driven cinematic "Regular vs Deep" section.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         GALLERY
+         ============================================================ -->
+    <section class="section-tight ss-gallery">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">screenshots</span>
+                <h2>A look at the <br><span class="grad-text">finished website.</span></h2>
+                <p class="ss-section-lead">Six key views from the live site — homepage, about, services, contact, mobile, and footer.</p>
+            </div>
+
+            <div class="ss-gallery-grid">
+                <figure class="ss-gallery-item ss-gallery-item-wide reveal" style="--stagger-index:0">
+                    <div class="ss-gallery-frame">
+                        <img src="/img/shine1.png" alt="Shine Star Cleaning homepage hero" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">01</span>
+                        <div>
+                            <p class="ss-gallery-title">Homepage — Hero</p>
+                            <p class="ss-gallery-desc">Parallax hero card, magnetic CTAs, animated orbs.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="ss-gallery-item reveal" style="--stagger-index:1">
+                    <div class="ss-gallery-frame">
+                        <img src="/img/shine2.png" alt="Homepage about and values" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">02</span>
+                        <div>
+                            <p class="ss-gallery-title">Homepage — About &amp; Values</p>
+                            <p class="ss-gallery-desc">Layered parallax collage of three cards.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="ss-gallery-item reveal" style="--stagger-index:2">
+                    <div class="ss-gallery-frame">
+                        <img src="/img/shine_service.png" alt="Services page" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">03</span>
+                        <div>
+                            <p class="ss-gallery-title">Services Page</p>
+                            <p class="ss-gallery-desc">Tilt cards with animated checklists.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="ss-gallery-item reveal" style="--stagger-index:3">
+                    <div class="ss-gallery-frame">
+                        <img src="/img/shine_contact.png" alt="Contact page desktop" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">04</span>
+                        <div>
+                            <p class="ss-gallery-title">Contact — Desktop</p>
+                            <p class="ss-gallery-desc">Clear call-to-action and live trust strip.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="ss-gallery-item ss-gallery-item-tall reveal" style="--stagger-index:4">
+                    <div class="ss-gallery-frame ss-gallery-frame-mobile">
+                        <img src="/img/shine_mobile_contact.png" alt="Contact page mobile" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">05</span>
+                        <div>
+                            <p class="ss-gallery-title">Contact — Mobile</p>
+                            <p class="ss-gallery-desc">Thumb-friendly layout, mobile-first.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+
+                <figure class="ss-gallery-item reveal" style="--stagger-index:5">
+                    <div class="ss-gallery-frame">
+                        <img src="/img/shine_footer3.png" alt="Footer" loading="lazy" />
+                    </div>
+                    <figcaption>
+                        <span class="ss-gallery-index">06</span>
+                        <div>
+                            <p class="ss-gallery-title">Footer</p>
+                            <p class="ss-gallery-desc">Quick links, contact, live trust bar.</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         BUILD STORY / TIMELINE
+         ============================================================ -->
+    <section class="section-tight ss-story">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">build-story</span>
+                <h2>How it was <br><span class="grad-text">built.</span></h2>
+            </div>
+
+            <ol class="ss-timeline">
+                <li class="ss-timeline-item reveal" style="--stagger-index:0">
+                    <span class="ss-timeline-dot"></span>
+                    <div class="ss-timeline-body">
+                        <span class="ss-timeline-step">Phase 01</span>
+                        <h3>Brand &amp; content</h3>
+                        <p>Mapped the client's tone, service checklists, and 18-city service area into a content model that drives both the site and local SEO.</p>
+                    </div>
+                </li>
+                <li class="ss-timeline-item reveal" style="--stagger-index:1">
+                    <span class="ss-timeline-dot"></span>
+                    <div class="ss-timeline-body">
+                        <span class="ss-timeline-step">Phase 02</span>
+                        <h3>Design system</h3>
+                        <p>Built a soft sky-blue palette, rounded geometry, and editorial typography — then locked it into Tailwind tokens for consistency.</p>
+                    </div>
+                </li>
+                <li class="ss-timeline-item reveal" style="--stagger-index:2">
+                    <span class="ss-timeline-dot"></span>
+                    <div class="ss-timeline-body">
+                        <span class="ss-timeline-step">Phase 03</span>
+                        <h3>Motion &amp; build</h3>
+                        <p>Implemented the 420vh scroll story, magnetic buttons, tilt cards, and mobile fallbacks. All animations respect <code>prefers-reduced-motion</code>.</p>
+                    </div>
+                </li>
+                <li class="ss-timeline-item reveal" style="--stagger-index:3">
+                    <span class="ss-timeline-dot"></span>
+                    <div class="ss-timeline-body">
+                        <span class="ss-timeline-step">Phase 04</span>
+                        <h3>SEO &amp; launch</h3>
+                        <p>Set up redirects from legacy <code>.html</code> URLs, security headers, and semantic metadata. Launched, indexed, and live on Google.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURES
+         ============================================================ -->
+    <section class="section-tight ss-features">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <span class="eyebrow" style="justify-content: center;">features</span>
+                <h2>What makes this <br><span class="grad-text">site stand out.</span></h2>
+            </div>
+
+            <div class="ss-features-grid">
+                <div class="ss-feature reveal" style="--stagger-index:0">
+                    <h3>Scroll-driven storytelling</h3>
+                    <p>A 420vh sticky-scroll section walks the visitor through <strong>Intro → Regular → Deep → Restaurant</strong> cleaning, with a progress bar and horizontal card motion tied to scroll position.</p>
+                    <span class="ss-feature-tag">Cinematic UX</span>
+                </div>
+                <div class="ss-feature reveal" style="--stagger-index:1">
+                    <h3>Magnetic &amp; tilt interactions</h3>
+                    <p>CTA buttons follow the cursor, and service cards tilt in 3D with a moving glare highlight. All effects are disabled on touch devices and when <code>prefers-reduced-motion</code> is set.</p>
+                    <span class="ss-feature-tag">Motion Design</span>
+                </div>
+                <div class="ss-feature reveal" style="--stagger-index:2">
+                    <h3>Mobile-first &amp; accessible</h3>
+                    <p>A dedicated <code>useIsMobile()</code> hook detects small viewports, touch pointers, and reduced motion — swapping heavy scroll animations for simple static sections on phones.</p>
+                    <span class="ss-feature-tag">Responsive</span>
+                </div>
+                <div class="ss-feature reveal" style="--stagger-index:3">
+                    <h3>SEO &amp; Google-ready</h3>
+                    <p>Semantic HTML, descriptive alt text, local business metadata, and clean URL redirects from legacy <code>.html</code> paths. The site is indexed and discoverable on Google.</p>
+                    <span class="ss-feature-tag">Discoverable</span>
+                </div>
+                <div class="ss-feature reveal" style="--stagger-index:4">
+                    <h3>Performance-first</h3>
+                    <p>Next.js 14 App Router with compression, lazy-loaded images, and no unnecessary client-side libraries. Security headers (<code>X-Content-Type-Options</code>, <code>X-Frame-Options</code>, <code>Referrer-Policy</code>) are set globally.</p>
+                    <span class="ss-feature-tag">Fast</span>
+                </div>
+                <div class="ss-feature reveal" style="--stagger-index:5">
+                    <h3>Checklist-based content</h3>
+                    <p>Each service (Regular, Deep, Restaurant) has a client-approved checklist rendered as animated checklists — reinforcing the brand promise of "written checklists every visit."</p>
+                    <span class="ss-feature-tag">Trust</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         SPEC PANEL
+         ============================================================ -->
+    <section class="section-tight ss-spec">
+        <div class="container">
+            <div class="ss-spec-grid">
+                <div class="ss-spec-copy reveal" style="--stagger-index:0">
+                    <span class="eyebrow">tech-stack</span>
+                    <h2>Built with <br><span class="grad-text">modern tools.</span></h2>
+                    <p>The site uses Next.js 14 App Router, React 18, Tailwind CSS 3, and Framer Motion 11 — with Lucide icons and Resend for contact forms.</p>
+                </div>
+
+                <div class="ss-spec-panel reveal" style="--stagger-index:1">
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Framework</span>
+                        <span class="ss-spec-value">Next.js 14 · App Router</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">UI</span>
+                        <span class="ss-spec-value">React 18 · Tailwind CSS 3</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Animation</span>
+                        <span class="ss-spec-value">Framer Motion 11</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Icons</span>
+                        <span class="ss-spec-value">Lucide</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Email</span>
+                        <span class="ss-spec-value">Resend</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">SEO</span>
+                        <span class="ss-spec-value">Semantic metadata · redirects</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Security</span>
+                        <span class="ss-spec-value">Nosniff · Frame · Referrer</span>
+                    </div>
+                    <div class="ss-spec-row">
+                        <span class="ss-spec-key">Status</span>
+                        <span class="ss-spec-value ss-spec-live"><span class="ss-spec-live-dot"></span> Live on Google</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA
+         ============================================================ -->
+    <section class="section-tight">
+        <div class="container">
+            <div class="reveal ss-cta">
+                <span class="eyebrow" style="justify-content: center;">live-site</span>
+                <h2>See it in <br><span class="grad-text">action.</span></h2>
+                <p>Shine Star Cleaning is live on Google. Visit the real site to experience the scroll animations and service cards in action.</p>
+                <div class="ss-cta-actions">
+                    <a href="https://www.shinestarcleaning.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-arrow">
+                        Visit shinestarcleaning.com
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                    </a>
+                    <a href="/portfolio" class="btn btn-secondary">← Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var module = await JS.InvokeAsync<IJSObjectReference>("import", "./js/portfolio.js");
+            await module.InvokeVoidAsync("portfolioPageInit");
+        }
+    }
+}
